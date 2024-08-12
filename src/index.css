@@ -74,6 +74,7 @@ body,
   background-clip: padding-box;
   border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  max-width: 400px;
 }
 
 .control-popup {
@@ -82,13 +83,26 @@ body,
   height: 44px;
   line-height: 44px;
   font-size: 30px;
+  text-shadow: black 0px 0px 1px;
   text-align: center;
-  filter: grayscale();
   user-select: none;
+}
+
+.control-popup-monochrome {
+  filter: grayscale();
 }
 
 .leaflet-control:hover .control-popup {
   display: none;
+}
+
+.leaflet-control:hover .control-popup-keep {
+  display: block;
+}
+
+.leaflet-control:has(.control-popup-selected) {
+  background-color: #747bff;
+  border-color: #747bff33;
 }
 
 .control-content {
@@ -105,6 +119,10 @@ body,
   padding: 6px 10px 6px 6px;
 }
 
+.control-content-left {
+  text-align: left !important;
+}
+
 .control-content span {
   display: flex;
   width: 100%;
@@ -112,4 +130,28 @@ body,
 
 .control-content input {
   margin-right: auto;
+}
+
+.collectable-list {
+  position: absolute;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  color: black;
+  bottom: 10px;
+  left: 56px;
+  width: 300px;
+  max-width: calc(100dvw - 132px);
+  max-height: 50dvh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 8px;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.collectable-list-hidden {
+  display: none;
 }
