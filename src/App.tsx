@@ -383,6 +383,7 @@ export default function App() {
               ~/Library/Application
               Support/com.greglobanov.chicory/save/_playdata
             </pre>
+            <button onClick={() => setCollected([])}>Reset Collected</button>
           </section>
         </Control>
         <Control position="bottomleft">
