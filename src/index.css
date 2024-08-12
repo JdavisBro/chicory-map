@@ -132,6 +132,15 @@ body,
   margin-right: auto;
 }
 
+.control-content pre {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.collected-marker {
+  opacity: 0.3;
+}
+
 .collectable-list {
   position: absolute;
   background-color: #fff;
@@ -154,4 +163,26 @@ body,
 
 .collectable-list-hidden {
   display: none;
+}
+
+.collectable-list span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collectable-item-collected {
+  background-color: lightgray;
+}
+
+.file-input-button {
+  width: fit-content;
+  margin-left: auto;
+  background-color: lightgray;
+  border: gray 1px solid;
+  border-radius: 4px;
+  padding: 1px 4px 1px 4px;
+}
+
+.file-input-button:hover {
+  background-color: rgb(176, 187, 199);
 }

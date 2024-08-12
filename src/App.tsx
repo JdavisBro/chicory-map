@@ -14,6 +14,7 @@ import {
 import { Animals, Gift, Gifts, Levels, Litter, OneLitter } from "./data/data";
 import { useState } from "react";
 import Control from "react-leaflet-custom-control";
+import { useLocalStorage } from "usehooks-ts";
 
 const SCALE = 0.1;
 const SCREEN_SIZE = { x: 1929 * SCALE, y: 1080 * SCALE };
@@ -44,13 +45,21 @@ function getPosition(screen: string, x: number, y: number) {
   );
 }
 
-function filterMarkers(
-  obj: Record<string, { name?: string; screen: string; x: number; y: number }>,
-  layer: number,
+function FilterMarkers({
+  obj,
+  layer,
+  collected,
+  toggleCollected,
+  markerIcon,
+}: {
+  obj: Record<string, { name?: string; screen: string; x: number; y: number }>;
+  layer: number;
+  collected: string[];
+  toggleCollected: (collId: string) => void;
   markerIcon:
     | string
-    | ((collectable: { screen: string; x: number; y: number }) => string),
-) {
+    | ((collectable: { screen: string; x: number; y: number }) => string);
+}) {
   return Object.keys(obj)
     .filter((collId) => Number(obj[collId].screen[0]) == layer)
     .map((collId) => (
@@ -64,11 +73,24 @@ function filterMarkers(
               : markerIcon(obj[collId]),
           iconSize: [41, 41],
           iconAnchor: [20, 25],
+          className: collected.includes(collId)
+            ? "collected-marker"
+            : undefined,
         })}
       >
-        {obj[collId].name ? (
-          <Popup offset={[0, -18]}>{obj[collId].name}</Popup>
-        ) : null}
+        <Popup offset={[0, -18]}>
+          {obj[collId].name ? (
+            <>
+              {obj[collId].name}
+              <br />
+            </>
+          ) : (
+            ""
+          )}
+          <a href="javascript:void" onClick={() => toggleCollected(collId)}>
+            {collected.includes(collId) ? "Unm" : "M"}ark as Collected
+          </a>
+        </Popup>
       </Marker>
     ));
 }
@@ -99,63 +121,86 @@ function CollectableList({
   collectable,
   layer,
   setLayer,
+  collected,
+  toggleCollected,
 }: {
   collectable: Collectable;
   layer: number;
   setLayer: (layer: number) => void;
+  collected: string[];
+  toggleCollected: (collId: string) => void;
 }) {
   const map = useMap();
   const obj = CollectableMap[collectable];
   if (!obj) {
     return null;
   }
-  return Object.keys(obj).map((collId) => (
-    <a
-      href="javascript:void"
-      onClick={() => {
-        const coll = obj[collId];
-        const newLayer = Number(coll.screen[0]);
-        if (layer != newLayer) {
-          setLayer(newLayer);
+  return Object.keys(obj)
+    .sort(
+      (collId1, collId2) =>
+        Number(collected.includes(collId1)) -
+        Number(collected.includes(collId2)),
+    )
+    .map((collId) => (
+      <span
+        key={collId}
+        className={
+          collected.includes(collId) ? "collectable-item-collected" : ""
         }
-        const pos = getPosition(coll.screen, coll.x, coll.y);
-        map.flyTo(pos, Math.max(map.getZoom(), 1));
-        setTimeout(
-          () =>
-            map.eachLayer((mapLayer) => {
-              "getLatLng" in mapLayer &&
-                (mapLayer.getLatLng as () => L.LatLng)().equals(pos) &&
-                mapLayer.openPopup();
-            }),
-          100,
-        );
-      }}
-    >
-      {obj[collId].name ?? collId}
-    </a>
-  ));
+      >
+        <a
+          href="javascript:void"
+          onClick={() => {
+            const coll = obj[collId];
+            const newLayer = Number(coll.screen[0]);
+            if (layer != newLayer) {
+              setLayer(newLayer);
+            }
+            const pos = getPosition(coll.screen, coll.x, coll.y);
+            map.flyTo(pos, Math.max(map.getZoom(), 1));
+            setTimeout(
+              () =>
+                map.eachLayer((mapLayer) => {
+                  "getLatLng" in mapLayer &&
+                    (mapLayer.getLatLng as () => L.LatLng)().equals(pos) &&
+                    mapLayer.openPopup();
+                }),
+              100,
+            );
+          }}
+        >
+          {obj[collId].name ?? collId}
+        </a>
+        <a
+          href="javascript:void"
+          className="collectable-item-collect"
+          onClick={() => toggleCollected(collId)}
+        >
+          {collected.includes(collId) ? "Uncollect" : "Collect"}
+        </a>
+      </span>
+    ));
 }
 
 export default function App() {
-  const [quality, setQuality] = useState("384x216");
+  const [collected, setCollected] = useLocalStorage<string[]>(
+    "mapCollected",
+    [],
+  );
+  const toggleCollected = (collId: string) =>
+    setCollected((collected) =>
+      collected.includes(collId)
+        ? collected.filter((arrCollId) => arrCollId != collId)
+        : [collId, ...collected],
+    );
+
+  const [quality, setQuality] = useLocalStorage("mapQuality", "384x216");
 
   const [collectable, setCollectable] = useState(Collectable.None);
   const toggleCollectable = (type: Collectable) =>
     setCollectable(collectable == type ? Collectable.None : type);
 
   const [layer, setLayer] = useState(0);
-
-  const litterMarkers = filterMarkers(Litter, layer, (litter: OneLitter) =>
-    litter.npc ? "markers/litterNPC.png" : "markers/litter.png",
-  );
-  const giftMarkers = filterMarkers(Gifts, layer, (gift: Partial<Gift>) =>
-    gift.npc
-      ? "markers/giftsNPC.png"
-      : gift.treasure
-        ? "markers/giftsTreasure.png"
-        : "markers/gifts.png",
-  );
-  const animalsMarkers = filterMarkers(Animals, layer, "markers/animal.png");
 
   return (
     <>
@@ -198,13 +243,45 @@ export default function App() {
             </LayersControl.BaseLayer>
           ))}
           <LayersControl.Overlay name="Litter" checked={true}>
-            <LayerGroup>{litterMarkers}</LayerGroup>
+            <LayerGroup>
+              <FilterMarkers
+                obj={Litter}
+                layer={layer}
+                collected={collected}
+                toggleCollected={toggleCollected}
+                markerIcon={(litter: OneLitter) =>
+                  litter.npc ? "markers/litterNPC.png" : "markers/litter.png"
+                }
+              />
+            </LayerGroup>
           </LayersControl.Overlay>
           <LayersControl.Overlay name="Gifts" checked={true}>
-            <LayerGroup>{giftMarkers}</LayerGroup>
+            <LayerGroup>
+              <FilterMarkers
+                obj={Gifts}
+                layer={layer}
+                collected={collected}
+                toggleCollected={toggleCollected}
+                markerIcon={(gift: Partial<Gift>) =>
+                  gift.npc
+                    ? "markers/giftsNPC.png"
+                    : gift.treasure
+                      ? "markers/giftsTreasure.png"
+                      : "markers/gifts.png"
+                }
+              />
+            </LayerGroup>
           </LayersControl.Overlay>
           <LayersControl.Overlay name="Animals" checked={true}>
-            <LayerGroup>{animalsMarkers}</LayerGroup>
+            <LayerGroup>
+              <FilterMarkers
+                obj={Animals}
+                layer={layer}
+                collected={collected}
+                toggleCollected={toggleCollected}
+                markerIcon={"markers/animal.png"}
+              />
+            </LayerGroup>
           </LayersControl.Overlay>
         </LayersControl>
         <Control position="topright">
@@ -222,6 +299,47 @@ export default function App() {
                 </span>
               </label>
             ))}
+          </section>
+        </Control>
+        <Control position="topright">
+          <a className="control-popup control-popup-monochrome">⚙️</a>
+          <section className="control-content">
+            <label>
+              <div className="file-input-button">Load Save File</div>
+              <input
+                type="file"
+                style={{ display: "none" }}
+                onChange={(event) => {
+                  if (!event.target.files) {
+                    return;
+                  }
+                  const file = event.target.files[0];
+                  file.text().then((text) => {
+                    console.log(
+                      Object.keys(JSON.parse(text.split("\n")[3])),
+                      Object.keys(JSON.parse(text.split("\n")[3])).filter(
+                        (key) =>
+                          key.startsWith("found_") || key.startsWith("gift_"),
+                      ),
+                    );
+                    setCollected(
+                      Object.keys(JSON.parse(text.split("\n")[3])).filter(
+                        (key) =>
+                          key.startsWith("found_") || key.startsWith("gift_"),
+                      ),
+                    );
+                  });
+                }}
+              />
+            </label>
+            <br />
+            Windows
+            <pre>%LOCALAPPDATA%\paintdog\save\_playdata</pre>
+            Mac
+            <pre>
+              ~/Library/Application
+              Support/com.greglobanov.chicory/save/_playdata
+            </pre>
           </section>
         </Control>
         <Control position="bottomleft">
@@ -256,6 +374,8 @@ export default function App() {
               collectable={collectable}
               layer={layer}
               setLayer={setLayer}
+              collected={collected}
+              toggleCollected={toggleCollected}
             />
           </div>
         </Control>
