@@ -119,7 +119,7 @@ function CollectableList({
           setLayer(newLayer);
         }
         const pos = getPosition(coll.screen, coll.x, coll.y);
-        map.flyTo(pos);
+        map.flyTo(pos, Math.max(map.getZoom(), 1));
         setTimeout(
           () =>
             map.eachLayer((mapLayer) => {
