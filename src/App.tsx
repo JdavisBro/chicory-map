@@ -163,8 +163,8 @@ export default function App() {
         className="map"
         center={[0, 0]}
         zoom={0}
-        maxZoom={5}
-        minZoom={-10}
+        maxZoom={3}
+        minZoom={-2}
         zoomSnap={0}
         zoomAnimation={false}
         crs={L.CRS.Simple}
