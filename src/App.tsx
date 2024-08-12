@@ -55,12 +55,6 @@ function getPosition(screen: string, x: number, y: number) {
 }
 
 function getOatsClothes(collected: string[]) {
-  console.log(
-    Object.keys(OatsGifts)
-      .filter((collId) => !collected.includes(collId))
-      .map((collId) => OatsGifts[collId])
-      .join(", "),
-  );
   return (
     "From Oats: " +
     Object.keys(OatsGifts)
@@ -257,6 +251,7 @@ export default function App() {
         <LayersControl>
           {Object.keys(Levels).map((mappedLayer) => (
             <LayersControl.BaseLayer
+              key={mappedLayer}
               checked={Number(mappedLayer) == layer}
               name={
                 Number(mappedLayer) == 0 ? "Surface" : `Layer ${mappedLayer}`
@@ -329,7 +324,7 @@ export default function App() {
           <a className="control-popup control-popup-monochrome">✨</a>
           <section className="control-content">
             {QUALITIES.map((qual) => (
-              <label>
+              <label key={qual}>
                 <span>
                   <input
                     type="radio"
