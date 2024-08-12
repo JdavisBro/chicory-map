@@ -25,6 +25,7 @@ export type Gift = {
   y: number;
   npc?: boolean;
   treasure?: boolean;
+  oats?: boolean;
 };
 
 export const Gifts: Record<string, Gift> = gifts;
@@ -34,3 +35,22 @@ export type OneLitter = { screen: string; x: number; y: number; npc?: boolean };
 export const Litter: Record<string, OneLitter> = litter;
 
 export const Levels: Record<string, number[][]> = levels;
+
+export const OatsGifts: Record<string, string> = {
+  gift_oats1: "Shades",
+  gift_oats2: "Tinted Shades",
+  gift_oats3: "Line Shades",
+  gift_oats4: "Big Shades",
+  gift_oats5: "Rim Shades",
+  gift_oats6: "Aviators",
+  gift_oats7: "Superstar",
+};
+
+export const ExtraSaveKeys: string[] = [
+  "basilthanks",
+  "fennelquest",
+  "giaclitter",
+  "olivequest",
+  "party_quest",
+  "beansreward",
+];

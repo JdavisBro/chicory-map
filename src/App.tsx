@@ -11,7 +11,16 @@ import {
   useMapEvents,
 } from "react-leaflet";
 
-import { Animals, Gift, Gifts, Levels, Litter, OneLitter } from "./data/data";
+import {
+  Animals,
+  ExtraSaveKeys,
+  Gift,
+  Gifts,
+  Levels,
+  Litter,
+  OatsGifts,
+  OneLitter,
+} from "./data/data";
 import { useState } from "react";
 import Control from "react-leaflet-custom-control";
 import { useLocalStorage } from "usehooks-ts";
@@ -42,6 +51,22 @@ function getPosition(screen: string, x: number, y: number) {
   return new L.LatLng(
     -SCREEN_SIZE.y * scr_y - y * SCALE,
     SCREEN_SIZE.x * scr_x + x * SCALE,
+  );
+}
+
+function getOatsClothes(collected: string[]) {
+  console.log(
+    Object.keys(OatsGifts)
+      .filter((collId) => !collected.includes(collId))
+      .map((collId) => OatsGifts[collId])
+      .join(", "),
+  );
+  return (
+    "From Oats: " +
+    Object.keys(OatsGifts)
+      .filter((collId) => !collected.includes(collId))
+      .map((collId) => OatsGifts[collId])
+      .join(", ")
   );
 }
 
@@ -82,6 +107,11 @@ function FilterMarkers({
           {obj[collId].name ? (
             <>
               {obj[collId].name}
+              <br />
+            </>
+          ) : collId == "oats" ? (
+            <>
+              {getOatsClothes(collected)}
               <br />
             </>
           ) : (
@@ -169,7 +199,8 @@ function CollectableList({
             );
           }}
         >
-          {obj[collId].name ?? collId}
+          {obj[collId].name ||
+            (collId == "oats" ? getOatsClothes(collected) : collId)}
         </a>
         <a
           href="javascript:void"
@@ -187,6 +218,14 @@ export default function App() {
     "mapCollected",
     [],
   );
+  const setSaveFile = (newCollected: string[]) => {
+    if (
+      !Object.keys(OatsGifts).some((collId) => !newCollected.includes(collId))
+    ) {
+      newCollected.push("oats");
+    }
+  };
+
   const toggleCollected = (collId: string) =>
     setCollected((collected) =>
       collected.includes(collId)
@@ -263,11 +302,13 @@ export default function App() {
                 collected={collected}
                 toggleCollected={toggleCollected}
                 markerIcon={(gift: Partial<Gift>) =>
-                  gift.npc
-                    ? "markers/giftsNPC.png"
-                    : gift.treasure
-                      ? "markers/giftsTreasure.png"
-                      : "markers/gifts.png"
+                  gift.oats
+                    ? "markers/giftsOats.png"
+                    : gift.npc
+                      ? "markers/giftsNPC.png"
+                      : gift.treasure
+                        ? "markers/giftsTreasure.png"
+                        : "markers/gifts.png"
                 }
               />
             </LayerGroup>
@@ -322,10 +363,12 @@ export default function App() {
                           key.startsWith("found_") || key.startsWith("gift_"),
                       ),
                     );
-                    setCollected(
+                    setSaveFile(
                       Object.keys(JSON.parse(text.split("\n")[3])).filter(
                         (key) =>
-                          key.startsWith("found_") || key.startsWith("gift_"),
+                          key.startsWith("found_") ||
+                          key.startsWith("gift_") ||
+                          ExtraSaveKeys.includes(key),
                       ),
                     );
                   });

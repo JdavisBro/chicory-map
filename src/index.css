@@ -167,6 +167,7 @@ body,
 
 .collectable-list span {
   display: flex;
+  gap: 10px;
   justify-content: space-between;
 }
 
