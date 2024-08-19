@@ -340,6 +340,39 @@ export default function App() {
 
   const [layer, setLayer] = useState(0);
 
+  const bounds = L.latLngBounds([0, 0], [-SCREEN_SIZE.y, SCREEN_SIZE.x]);
+
+  const levelLayerControls = Object.keys(Levels).map((mappedLayer) => (
+    <LayersControl.BaseLayer
+      key={mappedLayer}
+      checked={Number(mappedLayer) == layer}
+      name={Number(mappedLayer) == 0 ? "Surface" : `Layer ${mappedLayer}`}
+    >
+      <LayerGroup>
+        {Levels[mappedLayer].map((xy) => {
+          if (Number(mappedLayer) == layer) {
+            bounds.extend([
+              [-SCREEN_SIZE.y * xy[1], SCREEN_SIZE.x * xy[0]],
+              [-SCREEN_SIZE.y * (xy[1] + 1), SCREEN_SIZE.x * (xy[0] + 1)],
+            ]);
+          }
+          return (
+            <ImageOverlay
+              key={xy.join("_")}
+              url={`screens/${quality}/${mappedLayer}_${xy.join("_")}.webp`}
+              bounds={
+                new L.LatLngBounds(
+                  [-SCREEN_SIZE.y * xy[1], SCREEN_SIZE.x * xy[0]],
+                  [-SCREEN_SIZE.y * (xy[1] + 1), SCREEN_SIZE.x * (xy[0] + 1)],
+                )
+              }
+            />
+          );
+        })}
+      </LayerGroup>
+    </LayersControl.BaseLayer>
+  ));
+  console.log(bounds);
   return (
     <>
       <MapContainer
@@ -351,36 +384,13 @@ export default function App() {
         zoomSnap={0}
         zoomAnimation={false}
         crs={L.CRS.Simple}
+        maxBounds={bounds.pad(0.25)}
+        maxBoundsViscosity={0.7}
+        bounds={bounds}
       >
         <MapEvents setLayer={setLayer} setClickLocation={setClickLocation} />
         <LayersControl>
-          {Object.keys(Levels).map((mappedLayer) => (
-            <LayersControl.BaseLayer
-              key={mappedLayer}
-              checked={Number(mappedLayer) == layer}
-              name={
-                Number(mappedLayer) == 0 ? "Surface" : `Layer ${mappedLayer}`
-              }
-            >
-              <LayerGroup>
-                {Levels[mappedLayer].map((xy) => (
-                  <ImageOverlay
-                    key={xy.join("_")}
-                    url={`screens/${quality}/${mappedLayer}_${xy.join("_")}.webp`}
-                    bounds={
-                      new L.LatLngBounds(
-                        [-SCREEN_SIZE.y * xy[1], SCREEN_SIZE.x * xy[0]],
-                        [
-                          -SCREEN_SIZE.y * (xy[1] + 1),
-                          SCREEN_SIZE.x * (xy[0] + 1),
-                        ],
-                      )
-                    }
-                  />
-                ))}
-              </LayerGroup>
-            </LayersControl.BaseLayer>
-          ))}
+          {levelLayerControls}
           <LayersControl.Overlay name="Litter" checked={true}>
             <LayerGroup>
               <FilterMarkers
