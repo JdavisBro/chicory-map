@@ -30,17 +30,27 @@ import { useLocalStorage } from "usehooks-ts";
 const SCALE = 0.1;
 const SCREEN_SIZE = { x: 1929 * SCALE, y: 1080 * SCALE };
 
-const LOSSY_QUALITIES = [
-  ["192x108", "3.3 MB"],
-  ["384x216", "11 MB"],
-  ["960x540", "55 MB"],
-];
-const LOSSLESS_QUALITIES = [
-  ["192x108", "4.6 MB"],
-  ["384x216", "15.3 MB"],
-  ["960x540", "56.3 MB"],
-  ["1920x1080", "150 MB"],
-];
+const LOSSY_QUALITIES = import.meta.env.DEV
+  ? [
+      ["192x108", "3.3 MB"],
+      ["384x216", "11 MB"],
+      ["960x540", "55 MB"],
+    ]
+  : [
+      ["192x108", "3.3 MB"],
+      ["384x216", "11 MB"],
+    ];
+const LOSSLESS_QUALITIES = import.meta.env.DEV
+  ? [
+      ["192x108", "4.6 MB"],
+      ["384x216", "15.3 MB"],
+      ["960x540", "56.3 MB"],
+      ["1920x1080", "150 MB"],
+    ]
+  : [
+      ["192x108", "4.6 MB"],
+      ["384x216", "15.3 MB"],
+    ];
 
 function QualityOption(props: {
   text: string;
