@@ -146,12 +146,13 @@ body,
 .file-input-button {
   width: fit-content;
   margin-left: auto;
-  background-color: lightgray;
-  border: gray 1px solid;
+  color: white;
+  background-color: #2b2a33;
+  border: lightgray 1px solid;
   border-radius: 4px;
   padding: 1px 4px 1px 4px;
 }
 
 .file-input-button:hover {
-  background-color: rgb(176, 187, 199);
+  background-color: #52525e;
 }

@@ -469,13 +469,27 @@ export default function App() {
           <section className="control-content">
             Save File Locations
             <br />
-            Windows
-            <pre>%LOCALAPPDATA%\paintdog\save\_playdata</pre>
-            Mac
-            <pre>
-              ~/Library/Application
-              Support/com.greglobanov.chicory/save/_playdata
-            </pre>
+            Windows{" "}
+            <button
+              onClick={() =>
+                navigator.clipboard.writeText(
+                  "%LOCALAPPDATA%\\paintdog\\save\\_playdata",
+                )
+              }
+            >
+              Copy
+            </button>
+            <br />
+            Mac{" "}
+            <button
+              onClick={() =>
+                navigator.clipboard.writeText(
+                  "~/Library/Application Support/com.greglobanov.chicory/save/_playdata",
+                )
+              }
+            >
+              Copy
+            </button>
             <label>
               <div className="file-input-button">Load Save File</div>
               <input
@@ -499,9 +513,9 @@ export default function App() {
                 }}
               />
             </label>
+            <br />
             <button onClick={() => setCollected([])}>Reset Collected</button>
             <br />
-            <a href="https://jdavisbro.github.io/chicory">Old Map</a>
             <br />
             <label>
               <input
@@ -513,6 +527,9 @@ export default function App() {
               />{" "}
               Extra Info
             </label>
+            <br />
+            <br />
+            <a href="https://jdavisbro.github.io/chicory">Old Map</a>
           </section>
         </Control>
         <Control position="bottomleft">
