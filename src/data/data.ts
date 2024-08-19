@@ -4,7 +4,7 @@ import gifts from "./gifts.json";
 import litter from "./litter.json";
 import levels from "./levels.json";
 
-export type Animal = { screen: string; x: number; y: number };
+export type Animal = { name: string; screen: string; x: number; y: number };
 
 export const Animals: Record<string, Animal> = animals;
 

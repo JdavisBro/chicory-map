@@ -37,10 +37,9 @@ for i in dir.iterdir():
   layer, x, y = [int(n) for n in i.stem.split("_")] 
   if layer > 2: continue
   im = Image.open(i)
-  im.convert("L").save(f"1920x1080_lossless/{i.stem}.webp", lossless=True, quality=100)
-  # layerIms[layer].paste(im.convert("L"), (layerCenters[layer][0]+x*1920, layerCenters[layer][1]+y*1080))
+  # im.convert("L").save(f"1920x1080_lossless/{i.stem}.webp", lossless=True, quality=100)
+  layerIms[layer].paste(im.convert("L"), (layerCenters[layer][0]+x*1920, layerCenters[layer][1]+y*1080))
 
-exit()
 print("Resizing and Cropping")
 for scale in scales:
   size = (int(1920 * scale), int(1080 * scale))

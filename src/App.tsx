@@ -135,7 +135,10 @@ function FilterMarkers({
           ) : (
             ""
           )}
-          <a href="javascript:void" onClick={() => toggleCollected(collId)}>
+          <a
+            style={{ cursor: "pointer", textDecoration: "underline" }}
+            onClick={() => toggleCollected(collId)}
+          >
             {collected.includes(collId) ? "Unm" : "M"}ark as Collected
           </a>
         </Popup>
@@ -143,12 +146,19 @@ function FilterMarkers({
     ));
 }
 
-function MapEvents({ setLayer }: { setLayer: (layer: number) => void }) {
+function MapEvents({
+  setLayer,
+  setClickLocation,
+}: {
+  setLayer: (layer: number) => void;
+  setClickLocation: (latlng: L.LatLng) => void;
+}) {
   useMapEvents({
     baselayerchange: (event) =>
       setLayer(
         event.name == "Surface" ? 0 : Number(event.name.replace("Layer ", "")),
       ),
+    click: (event) => setClickLocation(event.latlng),
   });
 
   return null;
@@ -167,12 +177,14 @@ const CollectableMap: Record<
 
 function CollectableList({
   collectable,
+  setCollectable,
   layer,
   setLayer,
   collected,
   toggleCollected,
 }: {
   collectable: Collectable;
+  setCollectable: (collectable: Collectable) => void;
   layer: number;
   setLayer: (layer: number) => void;
   collected: string[];
@@ -197,7 +209,7 @@ function CollectableList({
         }
       >
         <a
-          href="javascript:void"
+          style={{ cursor: "pointer", textDecoration: "underline" }}
           onClick={() => {
             const coll = obj[collId];
             const newLayer = Number(coll.screen[0]);
@@ -205,6 +217,13 @@ function CollectableList({
               setLayer(newLayer);
             }
             const pos = getPosition(coll.screen, coll.x, coll.y);
+            if (
+              document.documentElement.clientHeight >
+              document.documentElement.clientWidth
+            ) {
+              // On mobile / vertical screen close collectable list
+              setCollectable(Collectable.None);
+            }
             map.flyTo(pos, Math.max(map.getZoom(), 1));
             setTimeout(
               () =>
@@ -221,7 +240,7 @@ function CollectableList({
             (collId == "oats" ? getOatsClothes(collected) : collId)}
         </a>
         <a
-          href="javascript:void"
+          style={{ cursor: "pointer", textDecoration: "underline" }}
           className="collectable-item-collect"
           onClick={() => toggleCollected(collId)}
         >
@@ -242,6 +261,7 @@ export default function App() {
     ) {
       newCollected.push("oats");
     }
+    setCollected(newCollected);
   };
 
   const toggleCollected = (collId: string) =>
@@ -251,7 +271,12 @@ export default function App() {
         : [collId, ...collected],
     );
 
-  const [quality, setQuality] = useLocalStorage("mapQuality", "384x216");
+  const [quality, setQuality] = useLocalStorage("mapQuality", "384x216_lossy");
+
+  const [extraInfo, setExtraInfo] = useLocalStorage("mapExtraInfo", false);
+  const [clickLocation, setClickLocation] = useState<L.LatLng | null>(null);
+  const click_x = clickLocation ? clickLocation.lng / SCREEN_SIZE.x : 0;
+  const click_y = clickLocation ? -clickLocation.lat / SCREEN_SIZE.y : 0;
 
   const [collectable, setCollectable] = useState(Collectable.None);
   const toggleCollectable = (type: Collectable) =>
@@ -271,7 +296,7 @@ export default function App() {
         zoomAnimation={false}
         crs={L.CRS.Simple}
       >
-        <MapEvents setLayer={setLayer} />
+        <MapEvents setLayer={setLayer} setClickLocation={setClickLocation} />
         <LayersControl>
           {Object.keys(Levels).map((mappedLayer) => (
             <LayersControl.BaseLayer
@@ -372,6 +397,15 @@ export default function App() {
         <Control position="topright">
           <a className="control-popup control-popup-monochrome">⚙️</a>
           <section className="control-content">
+            Save File Locations
+            <br />
+            Windows
+            <pre>%LOCALAPPDATA%\paintdog\save\_playdata</pre>
+            Mac
+            <pre>
+              ~/Library/Application
+              Support/com.greglobanov.chicory/save/_playdata
+            </pre>
             <label>
               <div className="file-input-button">Load Save File</div>
               <input
@@ -383,13 +417,6 @@ export default function App() {
                   }
                   const file = event.target.files[0];
                   file.text().then((text) => {
-                    console.log(
-                      Object.keys(JSON.parse(text.split("\n")[3])),
-                      Object.keys(JSON.parse(text.split("\n")[3])).filter(
-                        (key) =>
-                          key.startsWith("found_") || key.startsWith("gift_"),
-                      ),
-                    );
                     setSaveFile(
                       Object.keys(JSON.parse(text.split("\n")[3])).filter(
                         (key) =>
@@ -402,15 +429,18 @@ export default function App() {
                 }}
               />
             </label>
-            <br />
-            Windows
-            <pre>%LOCALAPPDATA%\paintdog\save\_playdata</pre>
-            Mac
-            <pre>
-              ~/Library/Application
-              Support/com.greglobanov.chicory/save/_playdata
-            </pre>
             <button onClick={() => setCollected([])}>Reset Collected</button>
+            <br />
+            <label>
+              <input
+                type="checkbox"
+                onClick={(event) =>
+                  setExtraInfo((event.target as HTMLInputElement).checked)
+                }
+                checked={extraInfo}
+              />{" "}
+              Extra Info
+            </label>
           </section>
         </Control>
         <Control position="bottomleft">
@@ -443,12 +473,29 @@ export default function App() {
           >
             <CollectableList
               collectable={collectable}
+              setCollectable={setCollectable}
               layer={layer}
               setLayer={setLayer}
               collected={collected}
               toggleCollected={toggleCollected}
             />
           </div>
+        </Control>
+        <Control position="topleft">
+          {extraInfo ? (
+            <div style={{ color: "black", padding: "10px" }}>
+              {clickLocation ? (
+                <>
+                  Click Position:
+                  <br />Z {layer} X {Math.floor(click_x)} Y{" "}
+                  {Math.floor(click_y)}
+                  <br />X {Math.round(
+                    1920 * (click_x - Math.floor(click_x)),
+                  )} Y {Math.round(1080 * (click_y - Math.floor(click_y)))}
+                </>
+              ) : null}
+            </div>
+          ) : null}
         </Control>
       </MapContainer>
     </>
