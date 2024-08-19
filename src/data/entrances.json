@@ -1,1353 +1,1353 @@
 {
-    "mountainGiftEntrance": {
-        "direction": "up",
-        "screen": "0_-5_-23",
-        "x": 850,
-        "y": 263,
-        "to": "mountainGift"
-    },
-    "mountainGift": {
-        "direction": "down",
-        "screen": "1_-5_-22",
-        "x": 840,
-        "y": 900,
-        "to": "mountainGiftEntrance"
-    },
-    "towerDoor": {
-        "direction": "up",
-        "screen": "0_0_0",
-        "x": 970,
-        "y": 423,
-        "to": "towerInsideDoor"
-    },
-    "towerInsideDoor": {
-        "direction": "down",
-        "screen": "1_-1_-1",
-        "x": 940,
-        "y": 825,
-        "to": "towerDoor"
-    },
-    "towerTree": {
-        "direction": "up",
-        "screen": "0_0_-1",
-        "x": 990,
-        "y": 573,
-        "to": "finalSpooky"
-    },
-    "finalSpooky": {
-        "direction": "down",
-        "screen": "2_-2_5",
-        "x": 941,
-        "y": 879,
-        "to": "towerTree"
-    },
-    "finalLeadup1In": {
-        "direction": "down",
-        "screen": "2_1_6",
-        "x": 1021,
-        "y": 939,
-        "to": "towerTree"
-    },
-    "finalLeadup1Out": {
-        "direction": "right",
-        "screen": "2_1_6",
-        "x": 990,
-        "y": 504,
-        "to": "finalLeadup2In"
-    },
-    "finalLeadup2In": {
-        "direction": "left",
-        "screen": "2_1_5",
-        "x": 980,
-        "y": 264,
-        "to": "finalLeadup1Out"
-    },
-    "finalLeadup2Out": {
-        "direction": "left",
-        "screen": "2_1_5",
-        "x": 965,
-        "y": 934,
-        "to": "finalLeadup3In"
-    },
-    "finalLeadup3In": {
-        "direction": "right",
-        "screen": "2_1_4",
-        "x": 924,
-        "y": 234,
-        "to": "finalLeadup2Out"
-    },
-    "finalLeadup3Out": {
-        "direction": "right",
-        "screen": "2_1_4",
-        "x": 954,
-        "y": 1014,
-        "to": "finalLeadup4In"
-    },
-    "finalLeadup4In": {
-        "direction": "left",
-        "screen": "2_1_3",
-        "x": 1025,
-        "y": 284,
-        "to": "finalLeadup3Out"
-    },
-    "finalLeadup4Out": {
-        "direction": "left",
-        "screen": "2_1_3",
-        "x": 945,
-        "y": 924,
-        "to": "finalLeadup5In"
-    },
-    "finalLeadup5In": {
-        "direction": "right",
-        "screen": "2_1_2",
-        "x": 965,
-        "y": 334,
-        "to": "finalLeadup4Out"
-    },
-    "finalLeadup5Out": {
-        "direction": "right",
-        "screen": "2_1_2",
-        "x": 1065,
-        "y": 934,
-        "to": "finalBossfight"
-    },
-    "finalBossfight": {
-        "direction": null,
-        "screen": "2_0_2",
-        "x": 915,
-        "y": 814,
-        "to": null
-    },
-    "towerChicoryDoor": {
-        "direction": "up",
-        "screen": "1_-1_-1",
-        "x": 960,
-        "y": 385,
-        "to": "chicoryRoom"
-    },
-    "chicoryRoom": {
-        "direction": "down",
-        "screen": "1_-1_0",
-        "x": 949,
-        "y": 975,
-        "to": "towerChicoryDoor"
-    },
-    "towerSupplyDoor": {
-        "direction": "down",
-        "screen": "1_1_-1",
-        "x": 1470,
-        "y": 735,
-        "to": "supplyRoom"
-    },
-    "supplyRoom": {
-        "direction": "up",
-        "screen": "1_0_0",
-        "x": 489,
-        "y": 215,
-        "to": "towerSupplyDoor"
-    },
-    "luncheonCafeDoor": {
-        "direction": "up",
-        "screen": "0_0_2",
-        "x": 950,
-        "y": 602,
-        "to": "luncheonCafe"
-    },
-    "luncheonCafe": {
-        "direction": "down",
-        "screen": "1_0_2",
-        "x": 950,
-        "y": 925,
-        "to": "luncheonCafeDoor"
-    },
-    "luncheonBeansDoor": {
-        "direction": "up",
-        "screen": "0_0_3",
-        "x": 1180,
-        "y": 703,
-        "to": "beansHouse"
-    },
-    "beansHouse": {
-        "direction": "down",
-        "screen": "1_0_3",
-        "x": 950,
-        "y": 965,
-        "to": "luncheonBeansDoor"
-    },
-    "luncheonMyHouse": {
-        "direction": "up",
-        "screen": "0_-1_0",
-        "x": 580,
-        "y": 582,
-        "to": "myHouse"
-    },
-    "myHouse": {
-        "direction": "down",
-        "screen": "1_0_1",
-        "x": 950,
-        "y": 845,
-        "to": "luncheonMyHouse"
-    },
-    "luncheonNibbleCave": {
-        "direction": "up",
-        "screen": "0_-2_-1",
-        "x": 579,
-        "y": 353,
-        "to": "nibbleFromLuncheon"
-    },
-    "nibbleFromLuncheon": {
-        "direction": "down",
-        "screen": "1_-2_-2",
-        "x": 948,
-        "y": 996,
-        "to": "luncheonNibbleCave"
-    },
-    "betweenNibbleBrewN": {
-        "direction": "up",
-        "screen": "0_-1_-2",
-        "x": 309,
-        "y": 503,
-        "to": "nibbleToBrew"
-    },
-    "nibbleToBrew": {
-        "direction": "down",
-        "screen": "1_-2_-2",
-        "x": 1689,
-        "y": 564,
-        "to": "betweenNibbleBrewN"
-    },
-    "betweenNibbleBrewB": {
-        "direction": "up",
-        "screen": "0_-1_-2",
-        "x": 1480,
-        "y": 212,
-        "to": "brewFromNibble"
-    },
-    "brewFromNibble": {
-        "direction": "down",
-        "screen": "1_0_-3",
-        "x": 900,
-        "y": 905,
-        "to": "betweenNibbleBrewB"
-    },
-    "brewStamppath": {
-        "direction": "down",
-        "screen": "1_1_-2",
-        "x": 890,
-        "y": 935,
-        "to": "brewStampback"
-    },
-    "brewStampback": {
-        "direction": "up",
-        "screen": "0_0_-2",
-        "x": 930,
-        "y": 612,
-        "to": "brewStamppath"
-    },
-    "belowDinnersGiftPath": {
-        "direction": "up",
-        "screen": "0_0_-2",
-        "x": 1670,
-        "y": 432,
-        "to": "belowDinnersGiftCave"
-    },
-    "belowDinnersGiftCave": {
-        "direction": "down",
-        "screen": "1_0_-2",
-        "x": 960,
-        "y": 975,
-        "to": "belowDinnersGiftPath"
-    },
-    "brewToDinners": {
-        "direction": "down",
-        "screen": "1_2_-3",
-        "x": 941,
-        "y": 794,
-        "to": "dinnersToBrew"
-    },
-    "dinnersToBrew": {
-        "direction": "up",
-        "screen": "0_1_-2",
-        "x": 550,
-        "y": 432,
-        "to": "brewToDinners"
-    },
-    "dinnersPlantShop": {
-        "direction": "up",
-        "screen": "0_0_-3",
-        "x": 1400,
-        "y": 322,
-        "to": "plantShop"
-    },
-    "plantShop": {
-        "direction": "down",
-        "screen": "1_0_-4",
-        "x": 649,
-        "y": 864,
-        "to": "dinnersPlantShop"
-    },
-    "dinnersSlice": {
-        "direction": "up",
-        "screen": "0_1_-4",
-        "x": 1340,
-        "y": 693,
-        "to": "slice"
-    },
-    "slice": {
-        "direction": "down",
-        "screen": "1_1_-4",
-        "x": 826,
-        "y": 915,
-        "to": "dinnersSlice"
-    },
-    "dinnersMailroom": {
-        "direction": "up",
-        "screen": "0_1_-5",
-        "x": 1092,
-        "y": 628,
-        "to": "mailroom"
-    },
-    "mailroom": {
-        "direction": "down",
-        "screen": "1_1_-5",
-        "x": 659,
-        "y": 931,
-        "to": "dinnersMailroom"
-    },
-    "dinnersTransitroom": {
-        "direction": "up",
-        "screen": "0_0_-6",
-        "x": 964,
-        "y": 524,
-        "to": "transitroom"
-    },
-    "transitroom": {
-        "direction": "down",
-        "screen": "1_0_-6",
-        "x": 991,
-        "y": 946,
-        "to": "dinnersTransitroom"
-    },
-    "dinnersBarbers": {
-        "direction": "up",
-        "screen": "0_0_-5",
-        "x": 1529,
-        "y": 622,
-        "to": "barbers"
-    },
-    "barbers": {
-        "direction": "down",
-        "screen": "1_0_-5",
-        "x": 1146,
-        "y": 921,
-        "to": "dinnersBarbers"
-    },
-    "dinnersRoofPartyDoor": {
-        "direction": "up",
-        "screen": "0_1_-6",
-        "x": 828,
-        "y": 393,
-        "to": "dinnersRoofParty"
-    },
-    "dinnersRoofParty": {
-        "direction": "up",
-        "screen": "0_1_-7",
-        "x": 338,
-        "y": 473,
-        "to": "dinnersRoofPartyDoor"
-    },
-    "litterRoomDoor": {
-        "direction": "up",
-        "screen": "0_3_-6",
-        "x": 659,
-        "y": 480,
-        "to": "litterRoom"
-    },
-    "litterRoom": {
-        "direction": "down",
-        "screen": "1_3_-6",
-        "x": 953,
-        "y": 864,
-        "to": "litterRoomDoor"
-    },
-    "toBlackberryFight": {
-        "direction": "right",
-        "screen": "1_3_-11",
-        "x": 833,
-        "y": 514,
-        "to": "blackberryFight"
-    },
-    "blackberryFight": {
-        "direction": "left",
-        "screen": "1_4_-7",
-        "x": 923,
-        "y": 494,
-        "to": "toBlackberryFight"
-    },
-    "blackberryTree": {
-        "direction": "up",
-        "screen": "0_4_-9",
-        "x": 957,
-        "y": 626,
-        "to": "blackberryTreeInside"
-    },
-    "blackberryTreeInside": {
-        "direction": "down",
-        "screen": "1_3_-7",
-        "x": 958,
-        "y": 891,
-        "to": "blackberryTree"
-    },
-    "grubGift": {
-        "direction": "down",
-        "screen": "1_4_-6",
-        "x": 508,
-        "y": 739,
-        "to": "grubGiftEntrance"
-    },
-    "grubGiftEntrance": {
-        "direction": "up",
-        "screen": "0_4_-5",
-        "x": 270,
-        "y": 163,
-        "to": "grubGift"
-    },
-    "grubEntrance": {
-        "direction": "up",
-        "screen": "0_4_-5",
-        "x": 1140,
-        "y": 443,
-        "to": "grubIn"
-    },
-    "grubIn": {
-        "direction": "down",
-        "screen": "1_4_-6",
-        "x": 1244,
-        "y": 963,
-        "to": "grubEntrance"
-    },
-    "teatimeGrubWaterfall": {
-        "direction": "up",
-        "screen": "0_4_-3",
-        "x": 1041,
-        "y": 433,
-        "to": "grubTeatimeWaterfall"
-    },
-    "grubTeatimeWaterfall": {
-        "direction": "down",
-        "screen": "1_4_-4",
-        "x": 1083,
-        "y": 1042,
-        "to": "teatimeGrubWaterfall"
-    },
-    "grubTeatime": {
-        "direction": "down",
-        "screen": "1_4_-4",
-        "x": 343,
-        "y": 912,
-        "to": "teatimeGrub"
-    },
-    "teatimeGrub": {
-        "direction": "up",
-        "screen": "0_4_-3",
-        "x": 519,
-        "y": 232,
-        "to": ""
-    },
-    "grubSwimExit": {
-        "direction": "up",
-        "screen": "1_5_-5",
-        "x": 57,
-        "y": 38,
-        "to": "grubSwimEntrance"
-    },
-    "grubSwimEntrance": {
-        "direction": "down",
-        "screen": "0_5_-5",
-        "x": 910,
-        "y": 585,
-        "to": "grubSwimExit"
-    },
-    "grubGrubdeep": {
-        "direction": "right",
-        "screen": "1_6_-5",
-        "x": 756,
-        "y": 740,
-        "to": "grubdeepGrub"
-    },
-    "grubdeepGrub": {
-        "direction": "left",
-        "screen": "2_6_-5",
-        "x": 820,
-        "y": 523,
-        "to": "grubGrubdeep"
-    },
-    "feastLitterShopEntrance": {
-        "direction": "up",
-        "screen": "2_5_-2",
-        "x": 1080,
-        "y": 863,
-        "to": "feastLittershop"
-    },
-    "feastLittershop": {
-        "direction": "down",
-        "screen": "1_5_-2",
-        "x": 995,
-        "y": 968,
-        "to": "feastLitterShopEntrance"
-    },
-    "feastDroseraEntrance": {
-        "direction": "up",
-        "screen": "2_7_-2",
-        "x": 810,
-        "y": 709,
-        "to": "feastDrosera"
-    },
-    "feastDrosera": {
-        "direction": "down",
-        "screen": "2_9_-2",
-        "x": 970,
-        "y": 969,
-        "to": "feastDroseraEntrance"
-    },
-    "feastTree": {
-        "direction": "up",
-        "screen": "2_8_2",
-        "x": 1390,
-        "y": 819,
-        "to": "feastBoss"
-    },
-    "feastBoss": {
-        "direction": null,
-        "screen": "2_9_0",
-        "x": 980,
-        "y": 559,
-        "to": null
-    },
-    "brekkieStreamerEntrance": {
-        "direction": "down",
-        "screen": "0_5_-3",
-        "x": 434,
-        "y": 263,
-        "to": "brekkieStreamer"
-    },
-    "brekkieStreamer": {
-        "direction": "up",
-        "screen": "1_5_-3",
-        "x": 740,
-        "y": 234,
-        "to": "brekkieStreamerEntrance"
-    },
-    "brekkieSweetsEntrance": {
-        "direction": "up",
-        "screen": "0_6_-3",
-        "x": 1255,
-        "y": 646,
-        "to": "brekkieSweets"
-    },
-    "brekkieSweets": {
-        "direction": "down",
-        "screen": "1_6_-3",
-        "x": 1225,
-        "y": 881,
-        "to": "brekkieSweetsEntrance"
-    },
-    "brekkiePhotoEntrance": {
-        "direction": "up",
-        "screen": "0_5_-1",
-        "x": 1261,
-        "y": 531,
-        "to": "brekkiePhoto"
-    },
-    "brekkiePhoto": {
-        "direction": "down",
-        "screen": "1_5_-1",
-        "x": 687,
-        "y": 858,
-        "to": "brekkiePhotoEntrance"
-    },
-    "teatimeBridgeEntrance": {
-        "direction": "up",
-        "screen": "0_4_-2",
-        "x": 859,
-        "y": 700,
-        "to": "teatimeBridge"
-    },
-    "teatimeBridge": {
-        "direction": "down",
-        "screen": "1_4_-2",
-        "x": 851,
-        "y": 593,
-        "to": "teatimeBridgeEntrance"
-    },
-    "teatimeMusicShopEntrance": {
-        "direction": "up",
-        "screen": "0_3_-1",
-        "x": 1470,
-        "y": 703,
-        "to": "teatimeMusicShop"
-    },
-    "teatimeMusicShop": {
-        "direction": "down",
-        "screen": "1_3_-1",
-        "x": 1051,
-        "y": 896,
-        "to": "teatimeMusicShopEntrance"
-    },
-    "potluckHoley": {
-        "direction": "up",
-        "screen": "0_-4_2",
-        "x": 702,
-        "y": 530,
-        "to": "holey"
-    },
-    "holey": {
-        "direction": "down",
-        "screen": "1_-4_2",
-        "x": 1150,
-        "y": 868,
-        "to": "potluckHoley"
-    },
-    "potluckParentHouse": {
-        "direction": "up",
-        "screen": "0_-4_3",
-        "x": 720,
-        "y": 561,
-        "to": "potluckHouse"
-    },
-    "potluckHouse": {
-        "direction": "down",
-        "screen": "1_-4_3",
-        "x": 954,
-        "y": 904,
-        "to": "potluckParentHouse"
-    },
-    "potluckAcademy": {
-        "direction": "up",
-        "screen": "0_-5_3",
-        "x": 946,
-        "y": 714,
-        "to": "academy"
-    },
-    "academy": {
-        "direction": "down",
-        "screen": "1_-5_3",
-        "x": 928,
-        "y": 964,
-        "to": "potluckAcademy"
-    },
-    "academyBackDoor": {
-        "direction": "up",
-        "screen": "1_-5_3",
-        "x": 718,
-        "y": 204,
-        "to": "academyBack"
-    },
-    "academyBack": {
-        "direction": "down",
-        "screen": "1_-5_4",
-        "x": 1248,
-        "y": 904,
-        "to": "academyBackDoor"
-    },
-    "clothingSwap": {
-        "direction": "down",
-        "screen": "1_-6_3",
-        "x": 738,
-        "y": 854,
-        "to": "potluckClothingSwap"
-    },
-    "potluckClothingSwap": {
-        "direction": "up",
-        "screen": "0_-6_3",
-        "x": 421,
-        "y": 567,
-        "to": "clothingSwap"
-    },
-    "potluckSwimHouse": {
-        "direction": "up",
-        "screen": "0_-6_4",
-        "x": 294,
-        "y": 640,
-        "to": "swimHouse"
-    },
-    "swimHouse": {
-        "direction": "down",
-        "screen": "1_-6_5",
-        "x": 954,
-        "y": 888,
-        "to": "potluckSwimHouse"
-    },
-    "sipsBrushStyler": {
-        "direction": "up",
-        "screen": "0_-3_4",
-        "x": 730,
-        "y": 633,
-        "to": "brushStyler"
-    },
-    "brushStyler": {
-        "direction": "up",
-        "screen": "1_-6_4",
-        "x": 1360,
-        "y": 871,
-        "to": "sipsBrushStyler"
-    },
-    "sipsBridgeEntrance": {
-        "direction": "up",
-        "screen": "0_-2_2",
-        "x": 931,
-        "y": 886,
-        "to": "sipsBridge"
-    },
-    "sipsBridge": {
-        "direction": "down",
-        "screen": "1_-2_2",
-        "x": 983,
-        "y": 642,
-        "to": "sipsBridgeEntrance"
-    },
-    "swampBossroomEntrance": {
-        "direction": "up",
-        "screen": "1_1_3",
-        "x": 963,
-        "y": 592,
-        "to": "swampBossroom"
-    },
-    "swampBossroom": {
-        "direction": "up",
-        "screen": "1_0_7",
-        "x": 988,
-        "y": 627,
-        "to": "swampBossroomEntrance"
-    },
-    "swampTree": {
-        "direction": "left",
-        "screen": "1_1_7",
-        "x": 1018,
-        "y": 507,
-        "to": "swampTreeEntrance"
-    },
-    "swampTreeEntrance": {
-        "direction": "up",
-        "screen": "0_1_7",
-        "x": 914,
-        "y": 780,
-        "to": "swampTree"
-    },
-    "blackberry": {
-        "direction": "down",
-        "screen": "1_4_7",
-        "x": 943,
-        "y": 869,
-        "to": "woodsBlackberry"
-    },
-    "woodsBlackberry": {
-        "direction": "up",
-        "screen": "0_4_7",
-        "x": 572,
-        "y": 748,
-        "to": "blackberry"
-    },
-    "woodsYum": {
-        "direction": "up",
-        "screen": "0_4_6",
-        "x": 1202,
-        "y": 378,
-        "to": "yumWoods"
-    },
-    "yumWoods": {
-        "direction": "up",
-        "screen": "1_4_5",
-        "x": 961,
-        "y": 993,
-        "to": "woodsYum"
-    },
-    "yumLuncheon": {
-        "direction": "down",
-        "screen": "1_2_3",
-        "x": 331,
-        "y": 893,
-        "to": "luncheonYum"
-    },
-    "luncheonYum": {
-        "direction": "up",
-        "screen": "0_1_3",
-        "x": 1566,
-        "y": 591,
-        "to": "yumLuncheon"
-    },
-    "woodsSpiderCave": {
-        "direction": "up",
-        "screen": "0_2_4",
-        "x": 606,
-        "y": 411,
-        "to": "spiderCave"
-    },
-    "spiderCave": {
-        "direction": "up",
-        "screen": "1_2_2",
-        "x": 961,
-        "y": 823,
-        "to": "woodsSpiderCave"
-    },
-    "rainforestStampPath1": {
-        "direction": "down",
-        "screen": "1_5_2",
-        "x": 1618,
-        "y": 1013,
-        "to": "caveRainforestStampPath"
-    },
-    "caveRainforestStampPath": {
-        "direction": "up",
-        "screen": "0_5_2",
-        "x": 968,
-        "y": 212,
-        "to": "rainforestStampPath1"
-    },
-    "rainforestStamp": {
-        "direction": "up",
-        "screen": "0_4_1",
-        "x": 1538,
-        "y": 322,
-        "to": "caveRainforestStamp"
-    },
-    "caveRainforestStamp": {
-        "direction": "down",
-        "screen": "1_4_2",
-        "x": 361,
-        "y": 883,
-        "to": "rainforestStamp"
-    },
-    "woodsTreeEntrance": {
-        "direction": "up",
-        "screen": "0_6_7",
-        "x": 1094,
-        "y": 627,
-        "to": "woodsTree"
-    },
-    "woodsTree": {
-        "direction": "down",
-        "screen": "1_7_6",
-        "x": 1020,
-        "y": 893,
-        "to": "woodsTreeEntrance"
-    },
-    "woodsTree1": {
-        "direction": "right",
-        "screen": "1_7_6",
-        "x": 980,
-        "y": 513,
-        "to": "woodsTree2"
-    },
-    "woodsTree2": {
-        "direction": "left",
-        "screen": "1_8_7",
-        "x": 630,
-        "y": 413,
-        "to": "woodsTree1"
-    },
-    "woodsBossEntrance": {
-        "direction": "right",
-        "screen": "1_10_7",
-        "x": 1730,
-        "y": 543,
-        "to": "woodsBossFight"
-    },
-    "woodsBossFight": {
-        "direction": null,
-        "screen": "1_6_7",
-        "x": 990,
-        "y": 633,
-        "to": null
-    },
-    "caveWoodsSwimSecret": {
-        "direction": "down",
-        "screen": "1_5_6",
-        "x": 154,
-        "y": 231,
-        "to": "woodsSwimSecret"
-    },
-    "woodsSwimSecret": {
-        "direction": "up",
-        "screen": "0_5_6",
-        "x": 311,
-        "y": 982,
-        "to": "caveWoodsSwimSecret"
-    },
-    "sipsBeetroot": {
-        "direction": "up",
-        "screen": "0_-2_7",
-        "x": 780,
-        "y": 552,
-        "to": "beetroot"
-    },
-    "beetroot": {
-        "direction": "down",
-        "screen": "1_-2_7",
-        "x": 871,
-        "y": 834,
-        "to": "sipsBeetroot"
-    },
-    "sipsBridge2Entrance": {
-        "direction": "left",
-        "screen": "1_-2_6",
-        "x": 1103,
-        "y": 581,
-        "to": "sipsBridge2"
-    },
-    "sipsBridge2": {
-        "direction": "up",
-        "screen": "0_-2_6",
-        "x": 1097,
-        "y": 588,
-        "to": "sipsBridge2Entrance"
-    },
-    "swampSwimSecret": {
-        "direction": "down",
-        "screen": "1_-1_7",
-        "x": 297,
-        "y": 944,
-        "to": "swampSwimSecretEntrance"
-    },
-    "swampSwimSecretEntrance": {
-        "direction": "up",
-        "screen": "0_-1_7",
-        "x": 1841,
-        "y": 726,
-        "to": "swampSwimSecret"
-    },
-    "nibblePotluck": {
-        "direction": "down",
-        "screen": "1_-4_0",
-        "x": 1078,
-        "y": 1024,
-        "to": "potluckNibble"
-    },
-    "potluckNibble": {
-        "direction": "up",
-        "screen": "0_-4_1",
-        "x": 947,
-        "y": 318,
-        "to": "nibblePotluck"
-    },
-    "elevensesGallery": {
-        "direction": "up",
-        "screen": "0_-4_-3",
-        "x": 1499,
-        "y": 705,
-        "to": "gallery"
-    },
-    "gallery": {
-        "direction": "down",
-        "screen": "1_-4_-4",
-        "x": 930,
-        "y": 998,
-        "to": "elevensesGallery"
-    },
-    "elevensesSecret": {
-        "direction": "down",
-        "screen": "1_-3_-4",
-        "x": 960,
-        "y": 978,
-        "to": "elevensesSecretEntrance"
-    },
-    "elevensesSecretEntrance": {
-        "direction": "up",
-        "screen": "0_-4_-4",
-        "x": 788,
-        "y": 284,
-        "to": "elevensesSecret"
-    },
-    "mountainWaterfallEntrance": {
-        "direction": "up",
-        "screen": "0_-4_-5",
-        "x": 1358,
-        "y": 64,
-        "to": "mountainWaterfall"
-    },
-    "mountainWaterfall": {
-        "direction": "down",
-        "screen": "1_-4_-5",
-        "x": 1310,
-        "y": 886,
-        "to": "mountainWaterfallEntrance"
-    },
-    "wielderFrontEntrance": {
-        "direction": "up",
-        "screen": "0_-6_0",
-        "x": 1179,
-        "y": 129,
-        "to": "wielderFront"
-    },
-    "wielderFront": {
-        "direction": "down",
-        "screen": "1_-6_-1",
-        "x": 925,
-        "y": 998,
-        "to": "wielderFrontEntrance"
-    },
-    "wielderGFleft1Entrance": {
-        "direction": "up",
-        "screen": "1_-7_-2",
-        "x": 965,
-        "y": 518,
-        "to": "wielderGFleft1"
-    },
-    "wielderGFleft1": {
-        "direction": "down",
-        "screen": "1_-7_-3",
-        "x": 935,
-        "y": 808,
-        "to": "wielderGFleft1Entrance"
-    },
-    "wielderGFleft2Entrance": {
-        "direction": "up",
-        "screen": "1_-7_-2",
-        "x": 1376,
-        "y": 272,
-        "to": "wielderGFleft2"
-    },
-    "wielderGFleft2": {
-        "direction": "down",
-        "screen": "1_-7_-3",
-        "x": 1516,
-        "y": 542,
-        "to": "wielderGFleft2Entrance"
-    },
-    "wielderGFRight1Entrance": {
-        "direction": "up",
-        "screen": "1_-5_-2",
-        "x": 1580,
-        "y": 669,
-        "to": "wielderGFRight1"
-    },
-    "wielderGFRight1": {
-        "direction": "up",
-        "screen": "1_-5_-3",
-        "x": 560,
-        "y": 899,
-        "to": "wielderGFRight1Entrance"
-    },
-    "wielderGFto1F": {
-        "direction": "right",
-        "screen": "1_-6_-3",
-        "x": 968,
-        "y": 600,
-        "to": "wielder1FtoGF"
-    },
-    "wielder1FtoGF": {
-        "direction": "left",
-        "screen": "2_-2_-6",
-        "x": 929,
-        "y": 533,
-        "to": "wielderGFto1F"
-    },
-    "wielder1Fto2F": {
-        "direction": "right",
-        "screen": "2_-3_-6",
-        "x": 908,
-        "y": 611,
-        "to": "wielder2Fto1F"
-    },
-    "wielder2Fto1F": {
-        "direction": "left",
-        "screen": "2_-7_-2",
-        "x": 969,
-        "y": 548,
-        "to": "wielder1Fto2F"
-    },
-    "wielder2Fto3F": {
-        "direction": "right",
-        "screen": "2_-6_-3",
-        "x": 929,
-        "y": 598,
-        "to": "wielder3Fto2F"
-    },
-    "wielder3Fto2F": {
-        "direction": "left",
-        "screen": "2_-3_-4",
-        "x": 939,
-        "y": 568,
-        "to": "wielder2Fto3F"
-    },
-    "wielder3Fto4F": {
-        "direction": "right",
-        "screen": "2_-2_-2",
-        "x": 909,
-        "y": 608,
-        "to": "wielder4Fto3F"
-    },
-    "wielder4Fto3F": {
-        "direction": "left",
-        "screen": "2_0_-4",
-        "x": 939,
-        "y": 608,
-        "to": "wielder3Fto4F"
-    },
-    "wielder4FtoExit": {
-        "direction": "left",
-        "screen": "2_-1_-2",
-        "x": 969,
-        "y": 628,
-        "to": "wielderTop"
-    },
-    "wielderTop": {
-        "direction": "right",
-        "screen": "0_-6_-1",
-        "x": 1053,
-        "y": 405,
-        "to": "wielder4FtoExit"
-    },
-    "elevensesCardamomHouse": {
-        "direction": "up",
-        "screen": "0_-4_-2",
-        "x": 553,
-        "y": 645,
-        "to": "cardamomHouse"
-    },
-    "cardamomHouse": {
-        "direction": "down",
-        "screen": "1_-4_-3",
-        "x": 733,
-        "y": 908,
-        "to": "elevensesCardamomHouse"
-    },
-    "colorLab": {
-        "direction": "down",
-        "screen": "1_4_-3",
-        "x": 941,
-        "y": 985,
-        "to": "colorLabEntrance"
-    },
-    "colorLabEntrance": {
-        "direction": "up",
-        "screen": "0_4_-4",
-        "x": 717,
-        "y": 737,
-        "to": "colorLab"
-    },
-    "colorLabVentEntrance": {
-        "direction": "up",
-        "screen": "0_4_-4",
-        "x": 433,
-        "y": 480,
-        "to": "colorLabVent"
-    },
-    "colorLabVent": {
-        "direction": "up",
-        "screen": "1_4_-3",
-        "x": 460,
-        "y": 177,
-        "to": "colorLabVentEntrance"
-    },
-    "wielderHellroom1": {
-        "direction": "up",
-        "screen": "2_-5_0",
-        "x": 389,
-        "y": 394,
-        "to": "wielderHeckroom1"
-    },
-    "wielderHeckroom1": {
-        "direction": "down",
-        "screen": "2_-4_0",
-        "x": 399,
-        "y": 524,
-        "to": "wielderHellroom1"
-    },
-    "wielderHellroom2": {
-        "direction": "up",
-        "screen": "2_-5_0",
-        "x": 759,
-        "y": 764,
-        "to": "wielderHeckroom2"
-    },
-    "wielderHeckroom2": {
-        "direction": "down",
-        "screen": "2_-4_0",
-        "x": 759,
-        "y": 844,
-        "to": "wielderHellroom2"
-    },
-    "wielderHellroom3": {
-        "direction": "up",
-        "screen": "2_-5_0",
-        "x": 1039,
-        "y": 774,
-        "to": "wielderHeckroom3"
-    },
-    "wielderHeckroom3": {
-        "direction": "down",
-        "screen": "2_-4_0",
-        "x": 999,
-        "y": 844,
-        "to": "wielderHellroom3"
-    },
-    "wielderHellroom4": {
-        "direction": "up",
-        "screen": "2_-5_0",
-        "x": 1359,
-        "y": 764,
-        "to": "wielderHeckroom4"
-    },
-    "wielderHeckroom4": {
-        "direction": "down",
-        "screen": "2_-4_0",
-        "x": 1349,
-        "y": 864,
-        "to": "wielderHellroom4"
-    },
-    "wielderHellroom5": {
-        "direction": "up",
-        "screen": "2_-5_0",
-        "x": 1629,
-        "y": 794,
-        "to": "wielderHeckroom5"
-    },
-    "wielderHeckroom5": {
-        "direction": "down",
-        "screen": "2_-4_0",
-        "x": 1679,
-        "y": 844,
-        "to": "wielderHellroom5"
-    },
-    "wielderHeckroom6": {
-        "direction": "down",
-        "screen": "2_-4_0",
-        "x": 969,
-        "y": 394,
-        "to": "wielderHellroom6"
-    },
-    "wielderHellroom6": {
-        "direction": "up",
-        "screen": "2_-5_0",
-        "x": 979,
-        "y": 314,
-        "to": "wielderHeckroom6"
-    },
-    "wielderHeckroom7": {
-        "direction": "down",
-        "screen": "2_-4_0",
-        "x": 1719,
-        "y": 244,
-        "to": "wielderHellroom7"
-    },
-    "wielderHellroom7": {
-        "direction": "up",
-        "screen": "2_-5_0",
-        "x": 1719,
-        "y": 254,
-        "to": "wielderHeckroom7"
-    },
-    "wielderExitGiftEntrance": {
-        "direction": "up",
-        "screen": "2_-1_-3",
-        "x": 617,
-        "y": 384,
-        "to": "wielderExitGift"
-    },
-    "wielderExitGift": {
-        "direction": "up",
-        "screen": "2_-1_-4",
-        "x": 567,
-        "y": 794,
-        "to": "wielderExitGiftEntrance"
-    },
-    "simmerHotelEntrance": {
-        "direction": "up",
-        "screen": "0_-6_-6",
-        "x": 1319,
-        "y": 521,
-        "to": "simmerHotel"
-    },
-    "simmerHotel": {
-        "direction": "down",
-        "screen": "1_-6_-7",
-        "x": 953,
-        "y": 938,
-        "to": "simmerHotelEntrance"
-    },
-    "hotelBackUp": {
-        "direction": "left",
-        "screen": "1_-5_-8",
-        "x": 813,
-        "y": 88,
-        "to": "hotelUpBack"
-    },
-    "hotelUpBack": {
-        "direction": "left",
-        "screen": "0_-6_-7",
-        "x": 1353,
-        "y": 475,
-        "to": "hotelBackUp"
-    },
-    "simmerToMountain": {
-        "direction": "up",
-        "screen": "0_-5_-7",
-        "x": 995,
-        "y": 15,
-        "to": "mountainToSimmer"
-    },
-    "mountainToSimmer": {
-        "direction": "up",
-        "screen": "0_-5_-22",
-        "x": 634,
-        "y": 1028,
-        "to": "simmerToMountain"
-    },
-    "thiefCaveEntrance": {
-        "direction": "up",
-        "screen": "0_-4_-6",
-        "x": 1671,
-        "y": 415,
-        "to": "thiefCave"
-    },
-    "thiefCave": {
-        "direction": "down",
-        "screen": "1_-4_-6",
-        "x": 954,
-        "y": 822,
-        "to": "thiefCaveEntrance"
-    },
-    "simmerBridge": {
-        "direction": "down",
-        "screen": "1_-5_-6",
-        "x": 964,
-        "y": 802,
-        "to": "simmerBridgeEntrance"
-    },
-    "simmerBridgeEntrance": {
-        "direction": "up",
-        "screen": "0_-5_-6",
-        "x": 1019,
-        "y": 753,
-        "to": "simmerBridge"
-    },
-    "hotelElevator": {
-        "direction": null,
-        "screen": "1_-6_-7",
-        "x": 1261,
-        "y": 246,
-        "to": "hotel2Elevator"
-    },
-    "hotel2Elevator": {
-        "direction": null,
-        "screen": "1_-6_-8",
-        "x": 1311,
-        "y": 266,
-        "to": "hotelElevator"
-    },
-    "hatMakerEntrance": {
-        "direction": "up",
-        "screen": "0_-2_-2",
-        "x": 680,
-        "y": 716,
-        "to": "hatMaker"
-    },
-    "hatMaker": {
-        "direction": "down",
-        "screen": "1_-2_-1",
-        "x": 1350,
-        "y": 796,
-        "to": "hatMakerEntrance"
-    }
+  "mountainGiftEntrance": {
+    "direction": "up",
+    "screen": "0_-5_-23",
+    "x": 850,
+    "y": 263,
+    "to": "mountainGift"
+  },
+  "mountainGift": {
+    "direction": "down",
+    "screen": "1_-5_-22",
+    "x": 840,
+    "y": 900,
+    "to": "mountainGiftEntrance"
+  },
+  "towerDoor": {
+    "direction": "up",
+    "screen": "0_0_0",
+    "x": 970,
+    "y": 423,
+    "to": "towerInsideDoor"
+  },
+  "towerInsideDoor": {
+    "direction": "down",
+    "screen": "1_-1_-1",
+    "x": 940,
+    "y": 825,
+    "to": "towerDoor"
+  },
+  "towerTree": {
+    "direction": "up",
+    "screen": "0_0_-1",
+    "x": 990,
+    "y": 573,
+    "to": "finalSpooky"
+  },
+  "finalSpooky": {
+    "direction": "down",
+    "screen": "2_-2_5",
+    "x": 941,
+    "y": 879,
+    "to": "towerTree"
+  },
+  "finalLeadup1In": {
+    "direction": "down",
+    "screen": "2_1_6",
+    "x": 1021,
+    "y": 939,
+    "to": "towerTree"
+  },
+  "finalLeadup1Out": {
+    "direction": "right",
+    "screen": "2_1_6",
+    "x": 990,
+    "y": 504,
+    "to": "finalLeadup2In"
+  },
+  "finalLeadup2In": {
+    "direction": "left",
+    "screen": "2_1_5",
+    "x": 980,
+    "y": 264,
+    "to": "finalLeadup1Out"
+  },
+  "finalLeadup2Out": {
+    "direction": "left",
+    "screen": "2_1_5",
+    "x": 965,
+    "y": 934,
+    "to": "finalLeadup3In"
+  },
+  "finalLeadup3In": {
+    "direction": "right",
+    "screen": "2_1_4",
+    "x": 924,
+    "y": 234,
+    "to": "finalLeadup2Out"
+  },
+  "finalLeadup3Out": {
+    "direction": "right",
+    "screen": "2_1_4",
+    "x": 954,
+    "y": 1014,
+    "to": "finalLeadup4In"
+  },
+  "finalLeadup4In": {
+    "direction": "left",
+    "screen": "2_1_3",
+    "x": 1025,
+    "y": 284,
+    "to": "finalLeadup3Out"
+  },
+  "finalLeadup4Out": {
+    "direction": "left",
+    "screen": "2_1_3",
+    "x": 945,
+    "y": 924,
+    "to": "finalLeadup5In"
+  },
+  "finalLeadup5In": {
+    "direction": "right",
+    "screen": "2_1_2",
+    "x": 965,
+    "y": 334,
+    "to": "finalLeadup4Out"
+  },
+  "finalLeadup5Out": {
+    "direction": "right",
+    "screen": "2_1_2",
+    "x": 1065,
+    "y": 934,
+    "to": "finalBossfight"
+  },
+  "finalBossfight": {
+    "direction": null,
+    "screen": "2_0_2",
+    "x": 915,
+    "y": 814,
+    "to": null
+  },
+  "towerChicoryDoor": {
+    "direction": "up",
+    "screen": "1_-1_-1",
+    "x": 960,
+    "y": 385,
+    "to": "chicoryRoom"
+  },
+  "chicoryRoom": {
+    "direction": "down",
+    "screen": "1_-1_0",
+    "x": 949,
+    "y": 975,
+    "to": "towerChicoryDoor"
+  },
+  "towerSupplyDoor": {
+    "direction": "down",
+    "screen": "1_1_-1",
+    "x": 1470,
+    "y": 735,
+    "to": "supplyRoom"
+  },
+  "supplyRoom": {
+    "direction": "up",
+    "screen": "1_0_0",
+    "x": 489,
+    "y": 215,
+    "to": "towerSupplyDoor"
+  },
+  "luncheonCafeDoor": {
+    "direction": "up",
+    "screen": "0_0_2",
+    "x": 950,
+    "y": 602,
+    "to": "luncheonCafe"
+  },
+  "luncheonCafe": {
+    "direction": "down",
+    "screen": "1_0_2",
+    "x": 950,
+    "y": 925,
+    "to": "luncheonCafeDoor"
+  },
+  "luncheonBeansDoor": {
+    "direction": "up",
+    "screen": "0_0_3",
+    "x": 1180,
+    "y": 703,
+    "to": "beansHouse"
+  },
+  "beansHouse": {
+    "direction": "down",
+    "screen": "1_0_3",
+    "x": 950,
+    "y": 965,
+    "to": "luncheonBeansDoor"
+  },
+  "luncheonMyHouse": {
+    "direction": "up",
+    "screen": "0_-1_0",
+    "x": 580,
+    "y": 582,
+    "to": "myHouse"
+  },
+  "myHouse": {
+    "direction": "down",
+    "screen": "1_0_1",
+    "x": 950,
+    "y": 845,
+    "to": "luncheonMyHouse"
+  },
+  "luncheonNibbleCave": {
+    "direction": "up",
+    "screen": "0_-2_-1",
+    "x": 579,
+    "y": 353,
+    "to": "nibbleFromLuncheon"
+  },
+  "nibbleFromLuncheon": {
+    "direction": "down",
+    "screen": "1_-2_-2",
+    "x": 948,
+    "y": 996,
+    "to": "luncheonNibbleCave"
+  },
+  "betweenNibbleBrewN": {
+    "direction": "up",
+    "screen": "0_-1_-2",
+    "x": 309,
+    "y": 503,
+    "to": "nibbleToBrew"
+  },
+  "nibbleToBrew": {
+    "direction": "down",
+    "screen": "1_-2_-2",
+    "x": 1689,
+    "y": 564,
+    "to": "betweenNibbleBrewN"
+  },
+  "betweenNibbleBrewB": {
+    "direction": "up",
+    "screen": "0_-1_-2",
+    "x": 1480,
+    "y": 212,
+    "to": "brewFromNibble"
+  },
+  "brewFromNibble": {
+    "direction": "down",
+    "screen": "1_0_-3",
+    "x": 900,
+    "y": 905,
+    "to": "betweenNibbleBrewB"
+  },
+  "brewStamppath": {
+    "direction": "down",
+    "screen": "1_1_-2",
+    "x": 890,
+    "y": 935,
+    "to": "brewStampback"
+  },
+  "brewStampback": {
+    "direction": "up",
+    "screen": "0_0_-2",
+    "x": 930,
+    "y": 612,
+    "to": "brewStamppath"
+  },
+  "belowDinnersGiftPath": {
+    "direction": "up",
+    "screen": "0_0_-2",
+    "x": 1670,
+    "y": 432,
+    "to": "belowDinnersGiftCave"
+  },
+  "belowDinnersGiftCave": {
+    "direction": "down",
+    "screen": "1_0_-2",
+    "x": 960,
+    "y": 975,
+    "to": "belowDinnersGiftPath"
+  },
+  "brewToDinners": {
+    "direction": "down",
+    "screen": "1_2_-3",
+    "x": 941,
+    "y": 794,
+    "to": "dinnersToBrew"
+  },
+  "dinnersToBrew": {
+    "direction": "up",
+    "screen": "0_1_-2",
+    "x": 550,
+    "y": 432,
+    "to": "brewToDinners"
+  },
+  "dinnersPlantShop": {
+    "direction": "up",
+    "screen": "0_0_-3",
+    "x": 1400,
+    "y": 322,
+    "to": "plantShop"
+  },
+  "plantShop": {
+    "direction": "down",
+    "screen": "1_0_-4",
+    "x": 649,
+    "y": 864,
+    "to": "dinnersPlantShop"
+  },
+  "dinnersSlice": {
+    "direction": "up",
+    "screen": "0_1_-4",
+    "x": 1340,
+    "y": 693,
+    "to": "slice"
+  },
+  "slice": {
+    "direction": "down",
+    "screen": "1_1_-4",
+    "x": 826,
+    "y": 915,
+    "to": "dinnersSlice"
+  },
+  "dinnersMailroom": {
+    "direction": "up",
+    "screen": "0_1_-5",
+    "x": 1092,
+    "y": 628,
+    "to": "mailroom"
+  },
+  "mailroom": {
+    "direction": "down",
+    "screen": "1_1_-5",
+    "x": 659,
+    "y": 931,
+    "to": "dinnersMailroom"
+  },
+  "dinnersTransitroom": {
+    "direction": "up",
+    "screen": "0_0_-6",
+    "x": 964,
+    "y": 524,
+    "to": "transitroom"
+  },
+  "transitroom": {
+    "direction": "down",
+    "screen": "1_0_-6",
+    "x": 991,
+    "y": 946,
+    "to": "dinnersTransitroom"
+  },
+  "dinnersBarbers": {
+    "direction": "up",
+    "screen": "0_0_-5",
+    "x": 1529,
+    "y": 622,
+    "to": "barbers"
+  },
+  "barbers": {
+    "direction": "down",
+    "screen": "1_0_-5",
+    "x": 1146,
+    "y": 921,
+    "to": "dinnersBarbers"
+  },
+  "dinnersRoofPartyDoor": {
+    "direction": "up",
+    "screen": "0_1_-6",
+    "x": 828,
+    "y": 393,
+    "to": "dinnersRoofParty"
+  },
+  "dinnersRoofParty": {
+    "direction": "up",
+    "screen": "0_1_-7",
+    "x": 338,
+    "y": 473,
+    "to": "dinnersRoofPartyDoor"
+  },
+  "litterRoomDoor": {
+    "direction": "up",
+    "screen": "0_3_-6",
+    "x": 659,
+    "y": 480,
+    "to": "litterRoom"
+  },
+  "litterRoom": {
+    "direction": "down",
+    "screen": "1_3_-6",
+    "x": 953,
+    "y": 864,
+    "to": "litterRoomDoor"
+  },
+  "toBlackberryFight": {
+    "direction": "right",
+    "screen": "1_3_-11",
+    "x": 833,
+    "y": 514,
+    "to": "blackberryFight"
+  },
+  "blackberryFight": {
+    "direction": "left",
+    "screen": "1_4_-7",
+    "x": 923,
+    "y": 494,
+    "to": "toBlackberryFight"
+  },
+  "blackberryTree": {
+    "direction": "up",
+    "screen": "0_4_-9",
+    "x": 957,
+    "y": 626,
+    "to": "blackberryTreeInside"
+  },
+  "blackberryTreeInside": {
+    "direction": "down",
+    "screen": "1_3_-7",
+    "x": 958,
+    "y": 891,
+    "to": "blackberryTree"
+  },
+  "grubGift": {
+    "direction": "down",
+    "screen": "1_4_-6",
+    "x": 508,
+    "y": 739,
+    "to": "grubGiftEntrance"
+  },
+  "grubGiftEntrance": {
+    "direction": "up",
+    "screen": "0_4_-5",
+    "x": 270,
+    "y": 163,
+    "to": "grubGift"
+  },
+  "grubEntrance": {
+    "direction": "up",
+    "screen": "0_4_-5",
+    "x": 1140,
+    "y": 443,
+    "to": "grubIn"
+  },
+  "grubIn": {
+    "direction": "down",
+    "screen": "1_4_-6",
+    "x": 1244,
+    "y": 963,
+    "to": "grubEntrance"
+  },
+  "teatimeGrubWaterfall": {
+    "direction": "up",
+    "screen": "0_4_-3",
+    "x": 1041,
+    "y": 433,
+    "to": "grubTeatimeWaterfall"
+  },
+  "grubTeatimeWaterfall": {
+    "direction": "down",
+    "screen": "1_4_-4",
+    "x": 1083,
+    "y": 1042,
+    "to": "teatimeGrubWaterfall"
+  },
+  "grubTeatime": {
+    "direction": "down",
+    "screen": "1_4_-4",
+    "x": 343,
+    "y": 912,
+    "to": "teatimeGrub"
+  },
+  "teatimeGrub": {
+    "direction": "up",
+    "screen": "0_4_-3",
+    "x": 519,
+    "y": 232,
+    "to": ""
+  },
+  "grubSwimExit": {
+    "direction": "up",
+    "screen": "1_5_-5",
+    "x": 57,
+    "y": 38,
+    "to": "grubSwimEntrance"
+  },
+  "grubSwimEntrance": {
+    "direction": "down",
+    "screen": "0_5_-5",
+    "x": 910,
+    "y": 585,
+    "to": "grubSwimExit"
+  },
+  "grubGrubdeep": {
+    "direction": "right",
+    "screen": "1_6_-5",
+    "x": 756,
+    "y": 740,
+    "to": "grubdeepGrub"
+  },
+  "grubdeepGrub": {
+    "direction": "left",
+    "screen": "2_6_-5",
+    "x": 820,
+    "y": 523,
+    "to": "grubGrubdeep"
+  },
+  "feastLitterShopEntrance": {
+    "direction": "up",
+    "screen": "2_5_-2",
+    "x": 1080,
+    "y": 863,
+    "to": "feastLittershop"
+  },
+  "feastLittershop": {
+    "direction": "down",
+    "screen": "1_5_-2",
+    "x": 995,
+    "y": 968,
+    "to": "feastLitterShopEntrance"
+  },
+  "feastDroseraEntrance": {
+    "direction": "up",
+    "screen": "2_7_-2",
+    "x": 810,
+    "y": 709,
+    "to": "feastDrosera"
+  },
+  "feastDrosera": {
+    "direction": "down",
+    "screen": "2_9_-2",
+    "x": 970,
+    "y": 969,
+    "to": "feastDroseraEntrance"
+  },
+  "feastTree": {
+    "direction": "up",
+    "screen": "2_8_2",
+    "x": 1390,
+    "y": 819,
+    "to": "feastBoss"
+  },
+  "feastBoss": {
+    "direction": null,
+    "screen": "2_9_0",
+    "x": 980,
+    "y": 559,
+    "to": null
+  },
+  "brekkieStreamerEntrance": {
+    "direction": "down",
+    "screen": "0_5_-3",
+    "x": 434,
+    "y": 263,
+    "to": "brekkieStreamer"
+  },
+  "brekkieStreamer": {
+    "direction": "up",
+    "screen": "1_5_-3",
+    "x": 740,
+    "y": 234,
+    "to": "brekkieStreamerEntrance"
+  },
+  "brekkieSweetsEntrance": {
+    "direction": "up",
+    "screen": "0_6_-3",
+    "x": 1255,
+    "y": 646,
+    "to": "brekkieSweets"
+  },
+  "brekkieSweets": {
+    "direction": "down",
+    "screen": "1_6_-3",
+    "x": 1225,
+    "y": 881,
+    "to": "brekkieSweetsEntrance"
+  },
+  "brekkiePhotoEntrance": {
+    "direction": "up",
+    "screen": "0_5_-1",
+    "x": 1261,
+    "y": 531,
+    "to": "brekkiePhoto"
+  },
+  "brekkiePhoto": {
+    "direction": "down",
+    "screen": "1_5_-1",
+    "x": 687,
+    "y": 858,
+    "to": "brekkiePhotoEntrance"
+  },
+  "teatimeBridgeEntrance": {
+    "direction": "up",
+    "screen": "0_4_-2",
+    "x": 859,
+    "y": 700,
+    "to": "teatimeBridge"
+  },
+  "teatimeBridge": {
+    "direction": "down",
+    "screen": "1_4_-2",
+    "x": 851,
+    "y": 593,
+    "to": "teatimeBridgeEntrance"
+  },
+  "teatimeMusicShopEntrance": {
+    "direction": "up",
+    "screen": "0_3_-1",
+    "x": 1470,
+    "y": 703,
+    "to": "teatimeMusicShop"
+  },
+  "teatimeMusicShop": {
+    "direction": "down",
+    "screen": "1_3_-1",
+    "x": 1051,
+    "y": 896,
+    "to": "teatimeMusicShopEntrance"
+  },
+  "potluckHoley": {
+    "direction": "up",
+    "screen": "0_-4_2",
+    "x": 702,
+    "y": 530,
+    "to": "holey"
+  },
+  "holey": {
+    "direction": "down",
+    "screen": "1_-4_2",
+    "x": 1150,
+    "y": 868,
+    "to": "potluckHoley"
+  },
+  "potluckParentHouse": {
+    "direction": "up",
+    "screen": "0_-4_3",
+    "x": 720,
+    "y": 561,
+    "to": "potluckHouse"
+  },
+  "potluckHouse": {
+    "direction": "down",
+    "screen": "1_-4_3",
+    "x": 954,
+    "y": 904,
+    "to": "potluckParentHouse"
+  },
+  "potluckAcademy": {
+    "direction": "up",
+    "screen": "0_-5_3",
+    "x": 946,
+    "y": 714,
+    "to": "academy"
+  },
+  "academy": {
+    "direction": "down",
+    "screen": "1_-5_3",
+    "x": 928,
+    "y": 964,
+    "to": "potluckAcademy"
+  },
+  "academyBackDoor": {
+    "direction": "up",
+    "screen": "1_-5_3",
+    "x": 718,
+    "y": 204,
+    "to": "academyBack"
+  },
+  "academyBack": {
+    "direction": "down",
+    "screen": "1_-5_4",
+    "x": 1248,
+    "y": 904,
+    "to": "academyBackDoor"
+  },
+  "clothingSwap": {
+    "direction": "down",
+    "screen": "1_-6_3",
+    "x": 738,
+    "y": 854,
+    "to": "potluckClothingSwap"
+  },
+  "potluckClothingSwap": {
+    "direction": "up",
+    "screen": "0_-6_3",
+    "x": 421,
+    "y": 567,
+    "to": "clothingSwap"
+  },
+  "potluckSwimHouse": {
+    "direction": "up",
+    "screen": "0_-6_4",
+    "x": 294,
+    "y": 640,
+    "to": "swimHouse"
+  },
+  "swimHouse": {
+    "direction": "down",
+    "screen": "1_-6_5",
+    "x": 954,
+    "y": 888,
+    "to": "potluckSwimHouse"
+  },
+  "sipsBrushStyler": {
+    "direction": "up",
+    "screen": "0_-3_4",
+    "x": 730,
+    "y": 633,
+    "to": "brushStyler"
+  },
+  "brushStyler": {
+    "direction": "up",
+    "screen": "1_-6_4",
+    "x": 1360,
+    "y": 871,
+    "to": "sipsBrushStyler"
+  },
+  "sipsBridgeEntrance": {
+    "direction": "up",
+    "screen": "0_-2_2",
+    "x": 931,
+    "y": 886,
+    "to": "sipsBridge"
+  },
+  "sipsBridge": {
+    "direction": "down",
+    "screen": "1_-2_2",
+    "x": 983,
+    "y": 642,
+    "to": "sipsBridgeEntrance"
+  },
+  "swampBossroomEntrance": {
+    "direction": "up",
+    "screen": "1_1_3",
+    "x": 963,
+    "y": 592,
+    "to": "swampBossroom"
+  },
+  "swampBossroom": {
+    "direction": "up",
+    "screen": "1_0_7",
+    "x": 988,
+    "y": 627,
+    "to": "swampBossroomEntrance"
+  },
+  "swampTree": {
+    "direction": "left",
+    "screen": "1_1_7",
+    "x": 1018,
+    "y": 507,
+    "to": "swampTreeEntrance"
+  },
+  "swampTreeEntrance": {
+    "direction": "up",
+    "screen": "0_1_7",
+    "x": 914,
+    "y": 780,
+    "to": "swampTree"
+  },
+  "blackberry": {
+    "direction": "down",
+    "screen": "1_4_7",
+    "x": 943,
+    "y": 869,
+    "to": "woodsBlackberry"
+  },
+  "woodsBlackberry": {
+    "direction": "up",
+    "screen": "0_4_7",
+    "x": 572,
+    "y": 748,
+    "to": "blackberry"
+  },
+  "woodsYum": {
+    "direction": "up",
+    "screen": "0_4_6",
+    "x": 1202,
+    "y": 378,
+    "to": "yumWoods"
+  },
+  "yumWoods": {
+    "direction": "up",
+    "screen": "1_4_5",
+    "x": 961,
+    "y": 993,
+    "to": "woodsYum"
+  },
+  "yumLuncheon": {
+    "direction": "down",
+    "screen": "1_2_3",
+    "x": 331,
+    "y": 893,
+    "to": "luncheonYum"
+  },
+  "luncheonYum": {
+    "direction": "up",
+    "screen": "0_1_3",
+    "x": 1566,
+    "y": 591,
+    "to": "yumLuncheon"
+  },
+  "woodsSpiderCave": {
+    "direction": "up",
+    "screen": "0_2_4",
+    "x": 606,
+    "y": 411,
+    "to": "spiderCave"
+  },
+  "spiderCave": {
+    "direction": "up",
+    "screen": "1_2_2",
+    "x": 961,
+    "y": 823,
+    "to": "woodsSpiderCave"
+  },
+  "rainforestStampPath1": {
+    "direction": "down",
+    "screen": "1_5_2",
+    "x": 1618,
+    "y": 1013,
+    "to": "caveRainforestStampPath"
+  },
+  "caveRainforestStampPath": {
+    "direction": "up",
+    "screen": "0_5_2",
+    "x": 968,
+    "y": 212,
+    "to": "rainforestStampPath1"
+  },
+  "rainforestStamp": {
+    "direction": "up",
+    "screen": "0_4_1",
+    "x": 1538,
+    "y": 322,
+    "to": "caveRainforestStamp"
+  },
+  "caveRainforestStamp": {
+    "direction": "down",
+    "screen": "1_4_2",
+    "x": 361,
+    "y": 883,
+    "to": "rainforestStamp"
+  },
+  "woodsTreeEntrance": {
+    "direction": "up",
+    "screen": "0_6_7",
+    "x": 1094,
+    "y": 627,
+    "to": "woodsTree"
+  },
+  "woodsTree": {
+    "direction": "down",
+    "screen": "1_7_6",
+    "x": 1020,
+    "y": 893,
+    "to": "woodsTreeEntrance"
+  },
+  "woodsTree1": {
+    "direction": "right",
+    "screen": "1_7_6",
+    "x": 980,
+    "y": 513,
+    "to": "woodsTree2"
+  },
+  "woodsTree2": {
+    "direction": "left",
+    "screen": "1_8_7",
+    "x": 630,
+    "y": 413,
+    "to": "woodsTree1"
+  },
+  "woodsBossEntrance": {
+    "direction": "right",
+    "screen": "1_10_7",
+    "x": 1730,
+    "y": 543,
+    "to": "woodsBossFight"
+  },
+  "woodsBossFight": {
+    "direction": null,
+    "screen": "1_6_7",
+    "x": 990,
+    "y": 633,
+    "to": null
+  },
+  "caveWoodsSwimSecret": {
+    "direction": "down",
+    "screen": "1_5_6",
+    "x": 154,
+    "y": 231,
+    "to": "woodsSwimSecret"
+  },
+  "woodsSwimSecret": {
+    "direction": "up",
+    "screen": "0_5_6",
+    "x": 311,
+    "y": 982,
+    "to": "caveWoodsSwimSecret"
+  },
+  "sipsBeetroot": {
+    "direction": "up",
+    "screen": "0_-2_7",
+    "x": 780,
+    "y": 552,
+    "to": "beetroot"
+  },
+  "beetroot": {
+    "direction": "down",
+    "screen": "1_-2_7",
+    "x": 871,
+    "y": 834,
+    "to": "sipsBeetroot"
+  },
+  "sipsBridge2Entrance": {
+    "direction": "left",
+    "screen": "1_-2_6",
+    "x": 1103,
+    "y": 581,
+    "to": "sipsBridge2"
+  },
+  "sipsBridge2": {
+    "direction": "up",
+    "screen": "0_-2_6",
+    "x": 1097,
+    "y": 588,
+    "to": "sipsBridge2Entrance"
+  },
+  "swampSwimSecret": {
+    "direction": "down",
+    "screen": "1_-1_7",
+    "x": 297,
+    "y": 944,
+    "to": "swampSwimSecretEntrance"
+  },
+  "swampSwimSecretEntrance": {
+    "direction": "up",
+    "screen": "0_-1_7",
+    "x": 1841,
+    "y": 726,
+    "to": "swampSwimSecret"
+  },
+  "nibblePotluck": {
+    "direction": "down",
+    "screen": "1_-4_0",
+    "x": 1078,
+    "y": 1024,
+    "to": "potluckNibble"
+  },
+  "potluckNibble": {
+    "direction": "up",
+    "screen": "0_-4_1",
+    "x": 947,
+    "y": 318,
+    "to": "nibblePotluck"
+  },
+  "elevensesGallery": {
+    "direction": "up",
+    "screen": "0_-4_-3",
+    "x": 1499,
+    "y": 705,
+    "to": "gallery"
+  },
+  "gallery": {
+    "direction": "down",
+    "screen": "1_-4_-4",
+    "x": 930,
+    "y": 998,
+    "to": "elevensesGallery"
+  },
+  "elevensesSecret": {
+    "direction": "down",
+    "screen": "1_-3_-4",
+    "x": 960,
+    "y": 978,
+    "to": "elevensesSecretEntrance"
+  },
+  "elevensesSecretEntrance": {
+    "direction": "up",
+    "screen": "0_-4_-4",
+    "x": 788,
+    "y": 284,
+    "to": "elevensesSecret"
+  },
+  "mountainWaterfallEntrance": {
+    "direction": "up",
+    "screen": "0_-4_-5",
+    "x": 1358,
+    "y": 64,
+    "to": "mountainWaterfall"
+  },
+  "mountainWaterfall": {
+    "direction": "down",
+    "screen": "1_-4_-5",
+    "x": 1310,
+    "y": 886,
+    "to": "mountainWaterfallEntrance"
+  },
+  "wielderFrontEntrance": {
+    "direction": "up",
+    "screen": "0_-6_0",
+    "x": 1179,
+    "y": 129,
+    "to": "wielderFront"
+  },
+  "wielderFront": {
+    "direction": "down",
+    "screen": "1_-6_-1",
+    "x": 925,
+    "y": 998,
+    "to": "wielderFrontEntrance"
+  },
+  "wielderGFleft1Entrance": {
+    "direction": "up",
+    "screen": "1_-7_-2",
+    "x": 965,
+    "y": 518,
+    "to": "wielderGFleft1"
+  },
+  "wielderGFleft1": {
+    "direction": "down",
+    "screen": "1_-7_-3",
+    "x": 935,
+    "y": 808,
+    "to": "wielderGFleft1Entrance"
+  },
+  "wielderGFleft2Entrance": {
+    "direction": "up",
+    "screen": "1_-7_-2",
+    "x": 1376,
+    "y": 272,
+    "to": "wielderGFleft2"
+  },
+  "wielderGFleft2": {
+    "direction": "down",
+    "screen": "1_-7_-3",
+    "x": 1516,
+    "y": 542,
+    "to": "wielderGFleft2Entrance"
+  },
+  "wielderGFRight1Entrance": {
+    "direction": "up",
+    "screen": "1_-5_-2",
+    "x": 1580,
+    "y": 669,
+    "to": "wielderGFRight1"
+  },
+  "wielderGFRight1": {
+    "direction": "up",
+    "screen": "1_-5_-3",
+    "x": 560,
+    "y": 899,
+    "to": "wielderGFRight1Entrance"
+  },
+  "wielderGFto1F": {
+    "direction": "right",
+    "screen": "1_-6_-3",
+    "x": 968,
+    "y": 600,
+    "to": "wielder1FtoGF"
+  },
+  "wielder1FtoGF": {
+    "direction": "left",
+    "screen": "2_-2_-6",
+    "x": 929,
+    "y": 533,
+    "to": "wielderGFto1F"
+  },
+  "wielder1Fto2F": {
+    "direction": "right",
+    "screen": "2_-3_-6",
+    "x": 908,
+    "y": 611,
+    "to": "wielder2Fto1F"
+  },
+  "wielder2Fto1F": {
+    "direction": "left",
+    "screen": "2_-7_-2",
+    "x": 969,
+    "y": 548,
+    "to": "wielder1Fto2F"
+  },
+  "wielder2Fto3F": {
+    "direction": "right",
+    "screen": "2_-6_-3",
+    "x": 929,
+    "y": 598,
+    "to": "wielder3Fto2F"
+  },
+  "wielder3Fto2F": {
+    "direction": "left",
+    "screen": "2_-3_-4",
+    "x": 939,
+    "y": 568,
+    "to": "wielder2Fto3F"
+  },
+  "wielder3Fto4F": {
+    "direction": "right",
+    "screen": "2_-2_-2",
+    "x": 909,
+    "y": 608,
+    "to": "wielder4Fto3F"
+  },
+  "wielder4Fto3F": {
+    "direction": "left",
+    "screen": "2_0_-4",
+    "x": 939,
+    "y": 608,
+    "to": "wielder3Fto4F"
+  },
+  "wielder4FtoExit": {
+    "direction": "left",
+    "screen": "2_-1_-2",
+    "x": 969,
+    "y": 628,
+    "to": "wielderTop"
+  },
+  "wielderTop": {
+    "direction": "right",
+    "screen": "0_-6_-1",
+    "x": 1053,
+    "y": 405,
+    "to": "wielder4FtoExit"
+  },
+  "elevensesCardamomHouse": {
+    "direction": "up",
+    "screen": "0_-4_-2",
+    "x": 553,
+    "y": 645,
+    "to": "cardamomHouse"
+  },
+  "cardamomHouse": {
+    "direction": "down",
+    "screen": "1_-4_-3",
+    "x": 733,
+    "y": 908,
+    "to": "elevensesCardamomHouse"
+  },
+  "colorLab": {
+    "direction": "down",
+    "screen": "1_4_-3",
+    "x": 941,
+    "y": 985,
+    "to": "colorLabEntrance"
+  },
+  "colorLabEntrance": {
+    "direction": "up",
+    "screen": "0_4_-4",
+    "x": 717,
+    "y": 737,
+    "to": "colorLab"
+  },
+  "colorLabVentEntrance": {
+    "direction": "up",
+    "screen": "0_4_-4",
+    "x": 433,
+    "y": 480,
+    "to": "colorLabVent"
+  },
+  "colorLabVent": {
+    "direction": "up",
+    "screen": "1_4_-3",
+    "x": 460,
+    "y": 177,
+    "to": "colorLabVentEntrance"
+  },
+  "wielderHellroom1": {
+    "direction": "up",
+    "screen": "2_-5_0",
+    "x": 389,
+    "y": 394,
+    "to": "wielderHeckroom1"
+  },
+  "wielderHeckroom1": {
+    "direction": "down",
+    "screen": "2_-4_0",
+    "x": 399,
+    "y": 524,
+    "to": "wielderHellroom1"
+  },
+  "wielderHellroom2": {
+    "direction": "up",
+    "screen": "2_-5_0",
+    "x": 759,
+    "y": 764,
+    "to": "wielderHeckroom2"
+  },
+  "wielderHeckroom2": {
+    "direction": "down",
+    "screen": "2_-4_0",
+    "x": 759,
+    "y": 844,
+    "to": "wielderHellroom2"
+  },
+  "wielderHellroom3": {
+    "direction": "up",
+    "screen": "2_-5_0",
+    "x": 1039,
+    "y": 774,
+    "to": "wielderHeckroom3"
+  },
+  "wielderHeckroom3": {
+    "direction": "down",
+    "screen": "2_-4_0",
+    "x": 999,
+    "y": 844,
+    "to": "wielderHellroom3"
+  },
+  "wielderHellroom4": {
+    "direction": "up",
+    "screen": "2_-5_0",
+    "x": 1359,
+    "y": 764,
+    "to": "wielderHeckroom4"
+  },
+  "wielderHeckroom4": {
+    "direction": "down",
+    "screen": "2_-4_0",
+    "x": 1349,
+    "y": 864,
+    "to": "wielderHellroom4"
+  },
+  "wielderHellroom5": {
+    "direction": "up",
+    "screen": "2_-5_0",
+    "x": 1629,
+    "y": 794,
+    "to": "wielderHeckroom5"
+  },
+  "wielderHeckroom5": {
+    "direction": "down",
+    "screen": "2_-4_0",
+    "x": 1679,
+    "y": 844,
+    "to": "wielderHellroom5"
+  },
+  "wielderHeckroom6": {
+    "direction": "down",
+    "screen": "2_-4_0",
+    "x": 969,
+    "y": 394,
+    "to": "wielderHellroom6"
+  },
+  "wielderHellroom6": {
+    "direction": "up",
+    "screen": "2_-5_0",
+    "x": 979,
+    "y": 314,
+    "to": "wielderHeckroom6"
+  },
+  "wielderHeckroom7": {
+    "direction": "down",
+    "screen": "2_-4_0",
+    "x": 1719,
+    "y": 244,
+    "to": "wielderHellroom7"
+  },
+  "wielderHellroom7": {
+    "direction": "up",
+    "screen": "2_-5_0",
+    "x": 1719,
+    "y": 254,
+    "to": "wielderHeckroom7"
+  },
+  "wielderExitGiftEntrance": {
+    "direction": "up",
+    "screen": "2_-1_-3",
+    "x": 617,
+    "y": 384,
+    "to": "wielderExitGift"
+  },
+  "wielderExitGift": {
+    "direction": "up",
+    "screen": "2_-1_-4",
+    "x": 567,
+    "y": 794,
+    "to": "wielderExitGiftEntrance"
+  },
+  "simmerHotelEntrance": {
+    "direction": "up",
+    "screen": "0_-6_-6",
+    "x": 1319,
+    "y": 521,
+    "to": "simmerHotel"
+  },
+  "simmerHotel": {
+    "direction": "down",
+    "screen": "1_-6_-7",
+    "x": 953,
+    "y": 938,
+    "to": "simmerHotelEntrance"
+  },
+  "hotelBackUp": {
+    "direction": "left",
+    "screen": "1_-5_-8",
+    "x": 813,
+    "y": 88,
+    "to": "hotelUpBack"
+  },
+  "hotelUpBack": {
+    "direction": "left",
+    "screen": "0_-6_-7",
+    "x": 1353,
+    "y": 475,
+    "to": "hotelBackUp"
+  },
+  "simmerToMountain": {
+    "direction": "up",
+    "screen": "0_-5_-7",
+    "x": 995,
+    "y": 15,
+    "to": "mountainToSimmer"
+  },
+  "mountainToSimmer": {
+    "direction": "down",
+    "screen": "0_-5_-22",
+    "x": 634,
+    "y": 1028,
+    "to": "simmerToMountain"
+  },
+  "thiefCaveEntrance": {
+    "direction": "up",
+    "screen": "0_-4_-6",
+    "x": 1671,
+    "y": 415,
+    "to": "thiefCave"
+  },
+  "thiefCave": {
+    "direction": "down",
+    "screen": "1_-4_-6",
+    "x": 954,
+    "y": 822,
+    "to": "thiefCaveEntrance"
+  },
+  "simmerBridge": {
+    "direction": "down",
+    "screen": "1_-5_-6",
+    "x": 964,
+    "y": 802,
+    "to": "simmerBridgeEntrance"
+  },
+  "simmerBridgeEntrance": {
+    "direction": "up",
+    "screen": "0_-5_-6",
+    "x": 1019,
+    "y": 753,
+    "to": "simmerBridge"
+  },
+  "hotelElevator": {
+    "direction": null,
+    "screen": "1_-6_-7",
+    "x": 1261,
+    "y": 246,
+    "to": "hotel2Elevator"
+  },
+  "hotel2Elevator": {
+    "direction": null,
+    "screen": "1_-6_-8",
+    "x": 1311,
+    "y": 266,
+    "to": "hotelElevator"
+  },
+  "hatMakerEntrance": {
+    "direction": "up",
+    "screen": "0_-2_-2",
+    "x": 680,
+    "y": 716,
+    "to": "hatMaker"
+  },
+  "hatMaker": {
+    "direction": "down",
+    "screen": "1_-2_-1",
+    "x": 1350,
+    "y": 796,
+    "to": "hatMakerEntrance"
+  }
 }

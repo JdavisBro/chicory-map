@@ -13,6 +13,8 @@ import {
 
 import {
   Animals,
+  Entrance,
+  Entrances,
   ExtraSaveKeys,
   Gift,
   Gifts,
@@ -85,6 +87,50 @@ function getOatsClothes(collected: string[]) {
       .filter((collId) => !collected.includes(collId))
       .map((collId) => OatsGifts[collId])
       .join(", ")
+  );
+}
+
+function EntranceMarker({
+  entrance,
+  setLayer,
+}: {
+  entrance: Entrance;
+  setLayer: (layer: number) => void;
+}) {
+  const map = useMap();
+  const exit = entrance.to ? Entrances[entrance.to] : null;
+
+  return (
+    <Marker
+      position={getPosition(entrance.screen, entrance.x, entrance.y)}
+      eventHandlers={{
+        click: () => {
+          if (!exit) return;
+          const pos = getPosition(exit.screen, exit.x, exit.y);
+          map.flyTo(pos, Math.max(map.getZoom(), 1));
+          setLayer(Number(exit.screen[0]));
+        },
+      }}
+      icon={L.icon({
+        iconUrl: `markers/entrances/${entrance.direction ?? "dot"}.png`,
+        iconSize: [40, 40],
+        iconAnchor: [
+          10 -
+            (entrance.direction == "down"
+              ? 10
+              : entrance.direction == "up"
+                ? -10
+                : 0),
+          10 -
+            (entrance.direction == "left"
+              ? 10
+              : entrance.direction == "right"
+                ? -10
+                : 0),
+        ],
+      })}
+      alt={entrance.direction ? `Entrance ${entrance.direction}` : "Exit"}
+    />
   );
 }
 
@@ -366,6 +412,20 @@ export default function App() {
                 toggleCollected={toggleCollected}
                 markerIcon={"markers/animal.png"}
               />
+            </LayerGroup>
+          </LayersControl.Overlay>
+          <LayersControl.Overlay name="Entrances" checked={false}>
+            <LayerGroup>
+              {Object.keys(Entrances)
+                .map((entranceId) => Entrances[entranceId])
+                .filter((entrance) => Number(entrance.screen[0]) == layer)
+                .map((entrance) => (
+                  <EntranceMarker
+                    key={`${entrance.screen}${entrance.x}${entrance.y}`}
+                    entrance={entrance}
+                    setLayer={setLayer}
+                  />
+                ))}
             </LayerGroup>
           </LayersControl.Overlay>
         </LayersControl>
