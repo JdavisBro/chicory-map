@@ -491,6 +491,8 @@ export default function App() {
             </label>
             <button onClick={() => setCollected([])}>Reset Collected</button>
             <br />
+            <a href="https://jdavisbro.github.io/chicory">Old Map</a>
+            <br />
             <label>
               <input
                 type="checkbox"
