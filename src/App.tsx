@@ -520,7 +520,7 @@ export default function App() {
             <label>
               <input
                 type="checkbox"
-                onClick={(event) =>
+                onChange={(event) =>
                   setExtraInfo((event.target as HTMLInputElement).checked)
                 }
                 checked={extraInfo}
@@ -528,6 +528,8 @@ export default function App() {
               Extra Info
             </label>
             <br />
+            <br />
+            <a href="https://github.com/JdavisBro/chicory-map/">Source Code</a>
             <br />
             <a href="https://jdavisbro.github.io/chicory">Old Map</a>
           </section>
