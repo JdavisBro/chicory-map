@@ -28,13 +28,37 @@ import { useLocalStorage } from "usehooks-ts";
 const SCALE = 0.1;
 const SCREEN_SIZE = { x: 1929 * SCALE, y: 1080 * SCALE };
 
-const QUALITIES = ["192x108", "384x216", "960x540", "1920x1080"];
-const QUALITY_SIZES: Record<string, string> = {
-  "192x108": "7 MB",
-  "384x216": "21 MB",
-  "960x540": "85 MB",
-  "1920x1080": "223 MB",
-};
+const LOSSY_QUALITIES = [
+  ["192x108", "3.3 MB"],
+  ["384x216", "11 MB"],
+  ["960x540", "55 MB"],
+];
+const LOSSLESS_QUALITIES = [
+  ["192x108", "4.6 MB"],
+  ["384x216", "15.3 MB"],
+  ["960x540", "56.3 MB"],
+  ["1920x1080", "150 MB"],
+];
+
+function QualityOption(props: {
+  text: string;
+  qual: string;
+  cur_qual: string;
+  setQuality: (qual: string) => void;
+}) {
+  return (
+    <label>
+      <span>
+        <input
+          type="radio"
+          checked={props.qual == props.cur_qual}
+          onChange={() => props.setQuality(props.qual)}
+        />
+        {props.text}
+      </span>
+    </label>
+  );
+}
 
 enum Collectable {
   None,
@@ -261,7 +285,7 @@ export default function App() {
                 {Levels[mappedLayer].map((xy) => (
                   <ImageOverlay
                     key={xy.join("_")}
-                    url={`screens/${quality}/${mappedLayer}_${xy.join("_")}.png`}
+                    url={`screens/${quality}/${mappedLayer}_${xy.join("_")}.webp`}
                     bounds={
                       new L.LatLngBounds(
                         [-SCREEN_SIZE.y * xy[1], SCREEN_SIZE.x * xy[0]],
@@ -323,17 +347,25 @@ export default function App() {
         <Control position="topright">
           <a className="control-popup control-popup-monochrome">✨</a>
           <section className="control-content">
-            {QUALITIES.map((qual) => (
-              <label key={qual}>
-                <span>
-                  <input
-                    type="radio"
-                    checked={qual == quality}
-                    onChange={() => setQuality(qual)}
-                  />
-                  {qual} ({QUALITY_SIZES[qual]})
-                </span>
-              </label>
+            Lossy Sizes
+            {LOSSY_QUALITIES.map(([qual, size]) => (
+              <QualityOption
+                key={qual}
+                text={`${qual} (${size})`}
+                qual={`${qual}_lossy`}
+                cur_qual={quality}
+                setQuality={setQuality}
+              />
+            ))}
+            Lossless Sizes
+            {LOSSLESS_QUALITIES.map(([qual, size]) => (
+              <QualityOption
+                key={qual}
+                text={`${qual} (${size})`}
+                qual={`${qual}_lossless`}
+                cur_qual={quality}
+                setQuality={setQuality}
+              />
             ))}
           </section>
         </Control>
