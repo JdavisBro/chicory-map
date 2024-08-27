@@ -150,6 +150,7 @@ function FilterMarkers({
   collected,
   toggleCollected,
   markerIcon,
+  includeId,
 }: {
   obj: Record<string, { name?: string; screen: string; x: number; y: number }>;
   layer: number;
@@ -158,6 +159,7 @@ function FilterMarkers({
   markerIcon:
     | string
     | ((collectable: { screen: string; x: number; y: number }) => string);
+  includeId: boolean;
 }) {
   return Object.keys(obj)
     .filter((collId) => Number(obj[collId].screen[0]) == layer)
@@ -191,6 +193,8 @@ function FilterMarkers({
           ) : (
             ""
           )}
+          {includeId ? collId : null}
+          <br />
           <a
             style={{ cursor: "pointer", textDecoration: "underline" }}
             onClick={() => toggleCollected(collId)}
@@ -261,7 +265,9 @@ function CollectableList({
       <span
         key={collId}
         className={
-          collected.includes(collId) ? "collectable-item-collected" : ""
+          collected.includes(collId)
+            ? "collectable-item collectable-item-collected"
+            : "collectable-item"
         }
       >
         <a
@@ -401,6 +407,7 @@ export default function App() {
                 markerIcon={(litter: OneLitter) =>
                   litter.npc ? "markers/litterNPC.png" : "markers/litter.png"
                 }
+                includeId={extraInfo}
               />
             </LayerGroup>
           </LayersControl.Overlay>
@@ -420,6 +427,7 @@ export default function App() {
                         ? "markers/giftsTreasure.png"
                         : "markers/gifts.png"
                 }
+                includeId={extraInfo}
               />
             </LayerGroup>
           </LayersControl.Overlay>
@@ -431,6 +439,7 @@ export default function App() {
                 collected={collected}
                 toggleCollected={toggleCollected}
                 markerIcon={"markers/animal.png"}
+                includeId={extraInfo}
               />
             </LayerGroup>
           </LayersControl.Overlay>

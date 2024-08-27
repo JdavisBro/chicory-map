@@ -127,16 +127,23 @@ body,
   font-size: 1.2em;
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 .collectable-list-hidden {
   display: none;
 }
 
-.collectable-list span {
+.collectable-item {
   display: flex;
   gap: 10px;
   justify-content: space-between;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+.collectable-item a:first-child {
+  overflow-wrap: anywhere;
 }
 
 .collectable-item-collected {
