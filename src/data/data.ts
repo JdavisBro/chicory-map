@@ -30,7 +30,16 @@ export type Gift = {
 
 export const Gifts: Record<string, Gift> = gifts;
 
-export type OneLitter = { screen: string; x: number; y: number; npc?: boolean };
+export type Condition = { key: string; operation: string; value: number };
+
+export type OneLitter = {
+  screen: string;
+  x: number;
+  y: number;
+  npc?: boolean;
+  oats?: boolean;
+  require?: Condition;
+};
 
 export const Litter: Record<string, OneLitter> = litter;
 

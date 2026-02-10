@@ -13,6 +13,7 @@ import {
 
 import {
   Animals,
+  Condition,
   Entrance,
   Entrances,
   ExtraSaveKeys,
@@ -520,14 +521,28 @@ export default function App() {
                   }
                   const file = event.target.files[0];
                   file.text().then((text) => {
-                    setSaveFile(
-                      Object.keys(JSON.parse(text.split("\n")[3])).filter(
-                        (key) =>
-                          key.startsWith("found_") ||
-                          key.startsWith("gift_") ||
-                          ExtraSaveKeys.includes(key),
-                      ),
+                    const data = JSON.parse(text.split("\n")[3]);
+                    const keys = Object.keys(data).filter(
+                      (key) =>
+                        key.startsWith("found_") ||
+                        key.startsWith("gift_") ||
+                        ExtraSaveKeys.includes(key),
                     );
+                    for (const litter_key of Object.keys(Litter)) {
+                      const litter = Litter[litter_key];
+                      if (litter.require) {
+                        let match = false;
+                        const value = Number(data[litter.require.key]);
+                        if (litter.require.operation == ">")
+                          match = value > litter.require.value;
+                        else if (litter.require.operation == "<")
+                          match = value < litter.require.value;
+                        else if (litter.require.operation == "=")
+                          match = value == litter.require.value;
+                        if (match) keys.push(litter_key);
+                      }
+                    }
+                    setSaveFile(keys);
                   });
                 }}
               />
